@@ -1,0 +1,10 @@
+{
+  "theme": "obsidian",
+  "textFontFamily": "华文中宋",
+  "interfaceFontFamily": "等线",
+  "monospaceFontFamily": "Consolas",
+  "baseFontSize": 17,
+  "baseFontSizeAction": true,
+  "accentColor": "#21adb0",
+  "cssTheme": "Tokyo Night"
+}

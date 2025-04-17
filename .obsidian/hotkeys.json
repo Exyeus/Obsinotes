@@ -1,0 +1,99 @@
+{
+  "calendar:show-calendar-view": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "V"
+    }
+  ],
+  "editor:toggle-code": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "C"
+    }
+  ],
+  "workspace:export-pdf": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "O"
+    }
+  ],
+  "insert-current-date": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "D"
+    }
+  ],
+  "insert-current-time": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "T"
+    }
+  ],
+  "window:zoom-out": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "-"
+    }
+  ],
+  "app:toggle-right-sidebar": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "ArrowLeft"
+    }
+  ],
+  "app:toggle-left-sidebar": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "ArrowRight"
+    }
+  ],
+  "workspace:split-vertical": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "H"
+    }
+  ],
+  "editor:focus-right": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "R"
+    }
+  ],
+  "editor:focus-left": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "L"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"id":"3a83cd6b0d991f70","type":"text","text":"函数与极限","x":-510,"y":-382,"width":150,"height":50},
+		{"id":"cd4118a8e66bd211","type":"text","text":"序列极限","x":-160,"y":-358,"width":144,"height":50},
+		{"id":"e39659b3524a0ae5","type":"text","text":"实数","x":-160,"y":-547,"width":120,"height":59},
+		{"id":"a0eb54ac73c13ee6","type":"text","text":"连续函数","x":-160,"y":-176,"width":144,"height":59},
+		{"id":"75133a4facf4291a","type":"text","text":"函数的极限","x":-160,"y":-268,"width":144,"height":52},
+		{"id":"3c87283b02f395cf","type":"text","text":"变量与函数","x":-160,"y":-448,"width":160,"height":50},
+		{"id":"7fda463479b68877","x":31,"y":-809,"width":389,"height":321,"type":"file","file":"高等数学/区间小专题.md"},
+		{"id":"7b1365dd24346ef9","x":78,"y":-476,"width":382,"height":168,"type":"text","text":"两道题\n- 假设(a,b)为任意一个开区间，证明：其中必有有理数和无理数——有理数集和无理数集在数轴上处处稠密$$如何理解稠密性$$"}
+	],
+	"edges":[
+		{"id":"948b3bcd6598f73c","fromNode":"3a83cd6b0d991f70","fromSide":"right","toNode":"e39659b3524a0ae5","toSide":"left"},
+		{"id":"3a7f605607a6a4eb","fromNode":"3a83cd6b0d991f70","fromSide":"right","toNode":"3c87283b02f395cf","toSide":"left"},
+		{"id":"fe64956d59e462d0","fromNode":"3a83cd6b0d991f70","fromSide":"right","toNode":"cd4118a8e66bd211","toSide":"left"},
+		{"id":"c28d9f07f1ff791c","fromNode":"3a83cd6b0d991f70","fromSide":"right","toNode":"75133a4facf4291a","toSide":"left"},
+		{"id":"a5fa76d339f5302c","fromNode":"3a83cd6b0d991f70","fromSide":"right","toNode":"a0eb54ac73c13ee6","toSide":"left"},
+		{"id":"aa89f6756fed6293","fromNode":"e39659b3524a0ae5","fromSide":"right","toNode":"7fda463479b68877","toSide":"left"},
+		{"id":"4d67f8c2b7d6fb28","fromNode":"e39659b3524a0ae5","fromSide":"right","toNode":"7b1365dd24346ef9","toSide":"left"}
+	]
+}

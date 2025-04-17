@@ -1,0 +1,135 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": true,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "file:CS61A",
+      "color": {
+        "a": 1,
+        "rgb": 7094249
+      }
+    },
+    {
+      "query": "file:yoj",
+      "color": {
+        "a": 1,
+        "rgb": 14725458
+      }
+    },
+    {
+      "query": "file:readme",
+      "color": {
+        "a": 1,
+        "rgb": 11657298
+      }
+    },
+    {
+      "query": "file:subject",
+      "color": {
+        "a": 1,
+        "rgb": 5431378
+      }
+    },
+    {
+      "query": "file:Python",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
+      }
+    },
+    {
+      "query": "file:C++",
+      "color": {
+        "a": 1,
+        "rgb": 5419488
+      }
+    },
+    {
+      "query": "file:矩阵",
+      "color": {
+        "a": 1,
+        "rgb": 5395168
+      }
+    },
+    {
+      "query": "file:class",
+      "color": {
+        "a": 1,
+        "rgb": 11621088
+      }
+    },
+    {
+      "query": "file:程序设计",
+      "color": {
+        "a": 1,
+        "rgb": 10030017
+      }
+    },
+    {
+      "query": "file:高数",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
+    },
+    {
+      "query": "file:数组",
+      "color": {
+        "a": 1,
+        "rgb": 14725458
+      }
+    },
+    {
+      "query": "file:Laiwoo",
+      "color": {
+        "a": 1,
+        "rgb": 11657298
+      }
+    },
+    {
+      "query": "file:CS61B",
+      "color": {
+        "a": 1,
+        "rgb": 16776960
+      }
+    },
+    {
+      "query": "gemini",
+      "color": {
+        "a": 1,
+        "rgb": 15919490
+      }
+    },
+    {
+      "query": "file:metaso",
+      "color": {
+        "a": 1,
+        "rgb": 16344065
+      }
+    },
+    {
+      "query": "file:高等数学",
+      "color": {
+        "a": 1,
+        "rgb": 10724351
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": -1.6,
+  "nodeSizeMultiplier": 1.67177481481481,
+  "lineSizeMultiplier": 0.891259259259259,
+  "collapse-forces": false,
+  "centerStrength": 0.483851851851852,
+  "repelStrength": 9.90459259259259,
+  "linkStrength": 0.847940740740741,
+  "linkDistance": 30,
+  "scale": 0.2185381677369134,
+  "close": true
+}

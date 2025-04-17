@@ -1,0 +1,77 @@
+- A 的作用 Ax, x是向量, 那么就可以输出Ax这个新的向量
+- 如果$Ax \parallel x\implies Ax=\lambda x$ $\lambda==Eigenvalue;;x==Eige ve c tor$
+# 几个实例
+本质 : 向量在矩阵的空间上的投影, 与向量本身方向一致
+- 对于投影矩阵， 这个数值只有可能为0或者1, <font color="#ffff00">因为想要投影后向量与原向量平行, 要么处于平面之内, 要么垂直</font>
+REVIEW
+![[Class 14 orthogonality of subspaces]]
+![[Class 15 Subspace Projection]]
+
+### Permutation Matrix $\begin{pmatrix}0 & 1 \\1& 0\end{pmatrix}$
+$$x=\begin{pmatrix}
+1 \\
+1
+\end{pmatrix}\implies Ax=\begin{pmatrix}
+1 \\
+1
+\end{pmatrix}\implies \lambda=1$$
+$$x=\begin{pmatrix}
+1 \\
+-1
+\end{pmatrix}\implies Ax=\begin{pmatrix}
+-1 \\
+1
+\end{pmatrix}\implies \begin{matrix}
+Eigenvalue = -1 \\
+x_{1}\cdot x_{2}=0\implies特征向量必须满足垂直
+\end{matrix}$$
+# $x$与$λ$的求解
+$REWIRTE::(A-\lambda I)x=0$ $\implies \det(A-\lambda I)=0$
+一共会有 N 个 λ, 但是他们可以相等
+牛逼实例
+$$
+A=\begin{pmatrix}
+3 & 1 \\
+1 & 3
+\end{pmatrix}\implies \det(A-\lambda I)=\begin{vmatrix}
+3-\lambda & 1 \\
+1 & 3 - \lambda
+\end{vmatrix}=(3-\lambda)^2-1\implies \begin{matrix}
+\lambda_{1}=2 \\
+\lambda_{2}=4
+\end{matrix}
+$$
+$Trace::3+3=6$,以及对于展开项$\lambda^2-6\lambda+8,,8=\begin{vmatrix}3 & 1 \\ 3 & 1\end{vmatrix}$
+计算出的特征值, 代入$A-\lambda I$, 可以使得这个矩阵变为奇异矩阵, 例如λ=4的时候, 就会有$\begin{pmatrix}-1 & 1 \\ 1 & -1\end{pmatrix}$, 这里的矩阵必须是奇异矩阵, 因为求解λ的方程经由$A-\lambda I$的行列式数值为0而写出!
+然后再来求解 x , 只需要分析 $A-\lambda I$的零空间向量, 例如$\lambda=4, x=\begin{pmatrix}1 \\ 1\end{pmatrix}$
+>结论
+>如果矩阵加上 $λI$ 那么其特征向量不变, 所有特征值都要加上 λ
+>$(A+3I)x=\lambda x+3x=(\lambda+3)x$
+>不可以推广至任意AB相加, 除非 B 是 λI, 这样任意x都有 $Ix=(\lambda=1)x$
+
+### 反对称矩阵特征值 Eigenvalue 纯虚数!
+$$Q=\begin{pmatrix}
+0 & -1 \\
+1 & 0
+\end{pmatrix}\implies \lambda^2+1=0\implies \begin{cases}
+\lambda_{1}=i \\
+\lambda_{2}= -i
+\end{cases}$$
+### 另一个不好的例子
+$$A=\begin{pmatrix}
+3 & 1 \\
+0 & 3
+\end{pmatrix}\implies \begin{vmatrix}
+3-\lambda & 1 \\
+0 & 3-\lambda
+\end{vmatrix}=0\implies(3-\lambda)^2\implies \begin{cases}
+\lambda_{1}=3 \\
+\lambda_{2}=3 \\
+\end{cases}$$
+问题出在这里产生了退化矩阵. $$A-λI=\begin{pmatrix}
+0 & 1 \\
+0 & 0
+\end{pmatrix}\implies x_{1}=\begin{pmatrix}
+0 \\
+1
+\end{pmatrix}, x_{2}==DNE$$

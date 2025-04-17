@@ -1,0 +1,81 @@
+# Diagonalizing a matrix $S^{-1}AS=\Lambda$
+把A的特征向量（参见[[Class 21 Eigenvalue and Eigenvector]]）作为S的每一列
+$$
+AS=A\begin{pmatrix}
+x_{1} & x_{2} & \dots & x_{n}
+\end{pmatrix}=\begin{pmatrix}
+\lambda x_{1} & \dots &\lambda x_{n}
+\end{pmatrix}=\begin{pmatrix}
+x_{1} & x_{2} &\dots&x_{n}
+\end{pmatrix}\begin{pmatrix}
+\lambda_{1}  \\
+&\lambda_{2} \\
+&&\lambda_{3} \\
+&&&\dots \\
+&&&&\lambda_{n}
+\end{pmatrix}=S\Lambda
+$$
+
+其中 $x_{1}x_{2}x_{3}\dots x_{n}$线性无关, S 可逆!
+$$乘以A^{-1}或S^{-1}\implies S^{-1}AS=\Lambda\to A=S\Lambda S^{-1}$$
+$$Ax=\lambda x\implies AAx=\lambda Ax\implies A^2x=\lambda^2x\implies A^2=S\Lambda S^{-1}S\Lambda S^{-1}=S\Lambda^2S^{-1}$$
+
+### 推广: $A^{k}=S\Lambda^{k}S^{-1}$
+提供了理解矩阵幂的一个视角. 同时由公式可发现, 变的只是特征值的幂, 而特征向量是不变的.
+>特征值是计算矩阵幂的一个高效办法
+
+什么时候矩阵的幂会倾向于0 (这样的矩阵称为稳定的)
+>定理$$\lim_{ n \to \infty }A^n=0 \impliedby \begin{matrix}
+Eigenvalue < 1 \\
+ALL \lvert \lambda_{{i}}<1 \rvert 
+\end{matrix}$$
+
+始终在有N个线性无关的特征向量的条件下进行, 否则就不能进行对角化
+之前的那个$\begin{pmatrix}3 & 1 \\0 &3\end{pmatrix}$是不可行的
+# Powers of A
+
+# 可操作的条件
+$$矩阵A的\lambda s 互不相等 \implies A有N个线性无关的向量并且可以进行对角化$$
+考量特征值重复的情况 代数重度 几何重度, 就是矩阵的零空间
+# Equation $u_{k+1}=Au_{k}$
+矩阵可以对角化 
+从$u_{0}$开始, 求解$u_{k+1}=Au_{k}$
+_如果将100个矩阵A乘以这一坨, 结果会是怎样的?_ 
+$$u_{1}=Au_{0}\implies u_{2}=A^2u_{0}\implies u_{k}=A^ku_{0}$$
+$$u_{0}=c_{1}x_{1}+c_{2}x_{2}+\dots+c_{n}x_{n}\implies Au_{0}=A(c_{1}x_{1}+\dots+c_{n}x_{n})=c_{1}\lambda_{1}x_{1}+\dots+c\lambda x$$
+$$\implies A^{100}u_{0}=\Lambda^{100}Sc$$
+# 斐波那契数列求解:
+$$F_{k+2}=F_{k+1}+F_{k}\implies u_{k+1}=\begin{pmatrix}
+F_{k+2} \\
+F_{k+1}
+\end{pmatrix};;A=\begin{pmatrix}
+1 & 1 \\
+1 & 0
+\end{pmatrix}\implies u_{k+1}=Au_{k}$$
+$$A-\lambda I=O\implies \lvert A-\lambda I \rvert =0\implies \lambda^2-\lambda+1=0\implies \begin{matrix}
+\lambda_{1}=\frac{1+\sqrt{ 5 }}{2} \\
+\lambda_{2}=\frac{1-\sqrt{ 5 }}{2}
+\end{matrix}$$
+数列的增长由特征值大小决定, 所以$F_{100} ≈\lambda_{1}^{100}$.
+这个式子的来源在于上面$u_{k+1}=Au_{k}$这个式子的展开形式, 展开为一系列线性无关的特征向量 !
+进一步, 考虑求解特征向量
+$$A-\lambda I=\begin{bmatrix}
+1-\lambda & 1 \\
+1 & -\lambda
+\end{bmatrix}:: \cdot=\begin{bmatrix}
+\lambda \\
+1
+\end{bmatrix}=\begin{bmatrix}
+0 \\
+0
+\end{bmatrix}$$
+>$\sum \lambda=-\frac{b}{a}$
+>$\prod \lambda=\frac{c}{a}$
+
+$$x_{1}=\begin{bmatrix}
+\lambda_{1} \\
+1
+\end{bmatrix};;x_{2}=\begin{bmatrix}
+\lambda_{2} \\
+1
+\end{bmatrix}$$
