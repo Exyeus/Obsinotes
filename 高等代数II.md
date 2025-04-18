@@ -6,6 +6,8 @@
 [[高等代数II 6 复实有理系数多项式]]
 [[高等代数 II 7 第一章复习]]
 
+[[高等代数 II 18 线性空间]]
+
 [[Gemini 高等代数II Lec14Guide]]
 [[Gemini 高等代数II_ReviewInverseMatrix]]
 [[Gemini 高等代数II_基变换坐标变换及其计算]]
@@ -13,6 +15,7 @@
 [[Gemini 高等代数II_证明空间为子空间直和]]
 [[Gemini 高等代数II_非平凡子空间一例]]
 [[Gemini 高等代数II_多项式相关线性空间一例]]
+[[Gemini 高等代数II_复习二次型 ]]
 
 
 

@@ -8,101 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "960c60ebf79d9594",
+            "id": "aaeb5dc3f8e3c6ed",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI导论.md",
+                "file": "README-r1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AI导论"
+              "title": "README-r1"
             }
           },
           {
-            "id": "7168713eea434f3b",
+            "id": "166993f84239f0d3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AIPython 18 MatplotlibAndMultivariableRegression.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AIPython 18 MatplotlibAndMultivariableRegression"
-            }
-          },
-          {
-            "id": "3dfc0fd7410eda5f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Gemini AdvancedOperationInListSlicing.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Gemini AdvancedOperationInListSlicing"
-            }
-          },
-          {
-            "id": "470a48e5b37d823d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CS61B.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "CS61B"
-            }
-          },
-          {
-            "id": "2035b3310ef03e93",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "GEMINI Teacher Prompt.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "GEMINI Teacher Prompt"
-            }
-          },
-          {
-            "id": "cf2e3ac771a888aa",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Gemini SingleValueLinearRegression.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Gemini SingleValueLinearRegression"
-            }
-          },
-          {
-            "id": "6e2f30dd118e7ede",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "GEMINI Teacher Prompt.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "GEMINI Teacher Prompt"
+              "title": "README"
             }
           }
         ],
@@ -159,7 +89,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -292,11 +223,18 @@
       "obsidian-spaced-repetition:复习卡片": false
     }
   },
-  "active": "7151a5e1e07f7822",
+  "active": "166993f84239f0d3",
   "lastOpenFiles": [
+    "README-r1.md",
+    "README.md",
+    "Gemini 高等代数II_复习二次型.md",
+    "高等代数II.md",
+    "GEMINI Teacher Prompt.md",
+    "高等代数 II 18 线性空间.md",
+    "Gemini 离散数学 二元关系.md",
+    "离散数学.md",
     "AIPython 18 MatplotlibAndMultivariableRegression.md",
     "AI导论.md",
-    "GEMINI Teacher Prompt.md",
     "CS61B L9 Interface,Inheritance.md",
     "Pasted image 20250416223242.png",
     "CS61B.md",
@@ -314,13 +252,6 @@
     "C++STL pair.md",
     "P1765 读取字符串行与分区间char运算计数.md",
     "Subject 9 线积分及其应用.md",
-    "P1443 BFS马步数范围统计.md",
-    "离散数学 3 消解与构造证明.md",
-    "python print 格式化输出.md",
-    "C++ cout 格式化数字输出.md",
-    "C++STL unordered_set.md",
-    "P5742 C++结构体的函数应用与定义细节.md",
-    "CS61A 4.3 Declarative Programming.md",
     "Pasted image 20250412220850.png",
     "Pasted image 20250410190725.png",
     "离散数学",
