@@ -60,6 +60,7 @@ sr-ease: 250
 >Clarification!
 >$\partial f / \partial x$ means that we fix $y$ as a constant, and we focus on the change of $x$ only.
 >$\partial f / \partial y$ means that we fix $x$.
+>Those operations resembling to *slicing area into pieces(in lower dimensions)* are universal, including computing partial derivatives and figuring out the limits in integrals.
 
 这恰好发生在曲面 $z=F(x,y)$ 在该点 $(x_0, y_0)$ 沿着 $y$ 方向的<font color="#ffff00">变化率</font> $F_y$ <font color="#ffff00">等于 0</font> 的时候！想象一下，如果你站在曲面上，沿着 y 轴方向看过去，如果地面是平的（$F_y=0$），那么对应的等高线（投影到 xy 平面）在该点的切线就可能是垂直于 x 轴的。
 

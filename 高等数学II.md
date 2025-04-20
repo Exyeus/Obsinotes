@@ -22,7 +22,14 @@
 [[Gemini 讲解线积分细节及计算]]
 [[Gemini 格林公式]]
 [[Gemini 三重积分应用]]
-
+[[Gemini 高斯公式一例]]
+[[Gemini 极限存在辨析一例]]
+[[Gemini 三种中值定理复习及解题方法]]
+[[Gemini Nabla Operator]]
+[[Gemini 积分改换]]
+[[Gemini 变上限定积分复习]]
+[[Gemini 函数微分学性质大赏]]
+[[Gemini 莱布尼兹公式求解高阶导数]]
 
 
 
