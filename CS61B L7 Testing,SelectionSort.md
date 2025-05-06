@@ -1,7 +1,7 @@
 ---
-sr-due: 2025-04-12
-sr-interval: 4
-sr-ease: 270
+sr-due: 2025-06-23
+sr-interval: 60
+sr-ease: 290
 ---
 
 #review 
@@ -34,7 +34,7 @@ public class TestSort {
 }
 ```
 
->Using a loop to check one by one instead of using `==` to judge, lies in that `==` judges whether or not the addresses the two respectively point to, are the same.
+>Using a loop to check one by one instead of using  to judge, lies in that `==` judges whether or not the addresses the two respectively point to, are the same.
 >`java.util.Arrays.equals` also works.
 
 

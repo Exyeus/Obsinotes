@@ -1,4 +1,4 @@
-[[Class 22 Eigen Diagonalization Power of Matrices]]
+[[18.06 22 Eigen Diagonalization Power of Matrices]]
 嗯，好，我现在要用对角化的方法来将一个二次型化为标准型。老师让我自己想一个例题，然后详细讲解每一步骤。好，先想一个二次型吧。嗯，就拿这个二次型：
 
 $Q(x) = 2x_1^2 + 3x_2^2 + 4x_3^2 + 2x_1x_2 + 2x_1x_3 + 2x_2x_3$

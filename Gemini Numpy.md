@@ -175,6 +175,8 @@ def propertymethod(self):
     #  [5 6]]
     print(b[:, 1])    # 所有行的第 1 列 -> [2 5 8] (这是一个一维数组!)
     print(b[1, :])    # 第 1 行的所有列 -> [4 5 6]
+    ** First Pair: rows
+    ** Second Pair: columns
     ```
 
 *   **视图 (View) vs 拷贝 (Copy) - 非常重要！**
@@ -275,6 +277,7 @@ def propertymethod(self):
 #### 5. `ndarray` 类的比较运算函数
 
 比较运算符（`>`, `<`, `==`, `!=`, `>=`, `<=`）作用于 NumPy 数组时，也会进行**元素级**比较，返回一个**布尔类型**的数组。
+
 
 ```python
 a = np.array([1, 5, 3])

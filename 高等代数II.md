@@ -17,8 +17,10 @@
 [[Gemini 高等代数II_多项式相关线性空间一例]]
 [[Gemini 高等代数II_复习二次型 ]]
 
-
-
+[[Gemini Sol 23 Midterm]]
+[[Gemini Sol 22 Midterm]]
+[[Gemini Sol 21 Midterm]]
+[[Gemini Sol 24 Midterm]]
 
 
 

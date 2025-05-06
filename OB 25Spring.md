@@ -16,6 +16,8 @@
 [[OB HW 2 Personality Analysis of Movie Character]]
 [[OB Midterm_PPT_content]]
 
+[[OB 10 CaseStudyOnMotivation]]
+
 
 
 

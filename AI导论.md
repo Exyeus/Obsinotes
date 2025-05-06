@@ -16,9 +16,13 @@ AIPython 15 Midterm test
 [[AIPython 16 Introduction to Numpy]]
 [[AIPython 17]]
 [[AIPython 18 MatplotlibAndMultivariableRegression]]
+[[AIPython 19 Gemini LogisticRegression]]
+[[AIPython 20 IntroductionToAI]]
+[[AIPython 21 IntroductionToMachineLearning]]
 
+[[AIPython Project2Regression]]
 
-
+[[Gemini VectorsInAI]]
 [[Gemini PythonVariableConfusion]]
 [[Gemini PythonBuiltinAlgoFuncs]]
 [[Gemini PythonStringOperations]]
@@ -35,6 +39,7 @@ AIPython 15 Midterm test
 [[Gemini Numpy]]
 [[Gemini SingleValueLinearRegression]]
 [[Gemini AdvancedOperationInListSlicing]]
+[[Gemini numpy使用简明教程]]
 
 
 
