@@ -99,14 +99,18 @@
 
 **二值分类问题的评价指标 (Evaluation Metrics):**
 
-假设我们关心的是“正类”（如“垃圾短信”、“患病”）和“负类”（如“正常短信”、“健康”）。将模型的预测结果与真实标签对比，可以得到一个**混淆矩阵 (Confusion Matrix)**：
+假设我们关心的是“正类”（如“垃圾短信”、“患病”）和“负类”（如“正常短信”、“健康”）。将模型的预测结果与真实标签对比，可以得到一个
 
-|                     | 预测为正 (Predicted Positive) | 预测为负 (Predicted Negative) |
-| :------------------ | :---------------------------: | :---------------------------: |
-| **实际为正 (Actual Positive)** |   TP (True Positive) 正确预测为正   |   FN (False Negative) 错误预测为负 (漏报)   |
-| **实际为负 (Actual Negative)** |   FP (False Positive) 错误预测为正 (误报)   |   TN (True Negative) 正确预测为负   |
+> [!important] 
+> **混淆矩阵 (Confusion Matrix)**：
+> 
+> |                     | 预测为正 (Predicted Positive) | 预测为负 (Predicted Negative) |
+> | :------------------ | :---------------------------: | :---------------------------: |
+> | **实际为正 (Actual Positive)** |   TP (True Positive) 正确预测为正   |   FN (False Negative) 错误预测为负 (漏报)   |
+> | **实际为负 (Actual Negative)** |   FP (False Positive) 错误预测为正 (误报)   |   TN (True Negative) 正确预测为负   |
+> 
 
-基于这个矩阵，我们可以定义：
+基于这个矩阵，定义：
 
 *   **准确率 (Accuracy):** 预测正确的样本占总样本的比例。
     $$ \text{Accuracy} = \frac{TP + TN}{TP + FN + FP + TN} $$

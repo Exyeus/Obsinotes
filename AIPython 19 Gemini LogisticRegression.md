@@ -18,14 +18,6 @@ p=\frac{1}{1+e^{-z} } \in(0, 1) \\
 z=\mathbf{x}\cdot \mathbf{w}
 \end{cases}$$
 
-好的，同学！很高兴能和你一起探讨人工智能和 Python 程序设计中的回归分析。看到这些 PPT 笔记，内容相当丰富，涵盖了从基础工具（Numpy, Matplotlib）到核心模型（线性回归、逻辑回归）以及优化方法（梯度下降）的完整流程。你的目标是深入理解，尤其是逻辑回归部分，并且希望弄清楚公式背后的“为什么”，而不是死记硬背，这非常好！这正是一个优秀学习者应该具备的特质。
-
-我们会借鉴 MIT 18.06 (Strang 教授的线性代数)、CS61A/B 的教学风格，注重直觉、推导和知识的联系。别担心数学基础或计算能力，我们会一步步来，确保每一步都清晰易懂。
-
-我们先快速回顾一下你已经接触过的内容，并尝试从更深层次或者不同角度来理解它们，然后重点攻克**逻辑回归**。
-
----
-
 ## 快速回顾与深化：Numpy、Matplotlib 与线性回归
 
 这部分内容你之前学过，我们主要目的是巩固理解，并为学习逻辑回归打好基础。
@@ -39,7 +31,7 @@ PPT 中提到了 Numpy 的重要性，尤其是在矩阵运算方面。
     2.  **内存连续：** `ndarray` 在内存中是连续存储的，利于 CPU 高速缓存优化。
     3.  **向量化 (Vectorization)：** 可以用简洁的数组表达式替代显式的循环，代码更易读，执行效率更高。例如，`a + b` 直接对两个 Numpy 数组 `a` 和 `b` 的对应元素求和，远快于写 Python 的 for 循环。
 
-*   **矩阵乘法：** PPT 提到了一个练习题：如何用普通乘法、broadcasting 和 reduction 实现矩阵乘法 $C_{M \times N} = A_{M \times K} B_{K \times N}$。
+*   **矩阵乘法：** PPT 提到了一个练习题：如何用普通乘法、broadcasting 和 reduction 实现矩阵乘法 $$C_{M \times N} = A_{M \times K} B_{K \times N}$$
     *   **标准方法：** 使用 `np.dot(A, B)` 或 `A @ B` (Python 3.5+)。这是最直接、最高效的方式。公式 $c_{ij} = \sum_{l=1}^{K} a_{il} \cdot b_{lj}$ 体现了点积的核心。
     *   **Broadcasting + Reduction 实现 (深化理解):** 这更能体现 Numpy 的机制。
         1.  **目标：** 计算 $c_{ij}$ 需要 $A$ 的第 $i$ 行和 $B$ 的第 $j$ 列的点积。
@@ -67,7 +59,7 @@ PPT 列出了常用的绘图函数：`scatter` (散点图), `plot` (折线图), 
 
 *   **绘制损失函数 $L(w, b)$ 等高线图 (深化理解):**
     1.  **动机：** 损失函数 $L(w, b)$ 是一个关于参数 $w$ 和 $b$ 的函数。我们想知道在 $(w, b)$ 平面上，哪些区域的损失值高，哪些区域低，最低点（最优参数）大概在哪里。等高线图像山脉地图一样，圈出的线代表相同“海拔”（损失值）。
-    2.  **`meshgrid` 的作用：** 我们不能无限地计算每个 $(w, b)$ 点的损失。`meshgrid` 就像是在 $(w, b)$ 平面上撒下一张规则的渔网。它接收两个一维数组（比如，一系列 $w$ 的值和一系列 $b$ 的值），然后生成两个二维数组：一个 `W` 矩阵，每个位置 `(i, j)` 存的是第 $j$ 个 $w$ 值；一个 `B` 矩阵，每个位置 `(i, j)` 存的是第 $i$ 个 $b$ 值。这样，`W[i, j]` 和 `B[i, j]` 就构成了网格上第 `(i, j)` 个点的坐标 $(w_j, b_i)$。
+    2.  **`meshgrid` 的作用：** 我们不能无限地计算每个 $(w, b)$ 点的损失。`meshgrid` 就像是在 $(w, b)$ 平面上撒下一张规则的渔网。它接收两个一维数组（比如，一系列 $w$ 的值和一系列 $b$ 的值），然后生成<font color="#ffff00">两个二维数组</font>：一个 `W` 矩阵，每个位置 `(i, j)` 存的是第 $j$ 个 $w$ 值；一个 `B` 矩阵，每个位置 `(i, j)` 存的是第 $i$ 个 $b$ 值。这样，`W[i, j]` 和 `B[i, j]` 就构成了网格上第 `(i, j)` 个<font color="#ffff00">点的坐标</font> $(w_j, b_i)$。
     3.  **计算损失 (向量化):** 有了 `W` 和 `B` (维度都是 `grid_size_b x grid_size_w`)，以及训练数据 $x$ (N x 1) 和 $y$ (N x 1)，如何高效计算每个网格点的损失 $L(w, b) = \frac{1}{N} \sum_{i=1}^N (w x_i + b - y_i)^2$？
         *   **挑战：** 对于 `W` 和 `B` 中的每一个 $(w, b)$ 组合，都要遍历所有 $N$ 个数据点计算 MSE。直接用 Python 循环会非常慢。
         *   **向量化思路 (利用 Broadcasting):**
@@ -98,10 +90,10 @@ PPT 列出了常用的绘图函数：`scatter` (散点图), `plot` (折线图), 
     *   **一元：** $y \approx w x + b$. 几何上是一条直线。
     *   **多元：** $y \approx w_1 x_1 + w_2 x_2 + ... + w_d x_d + b$. 几何上是一个超平面。
     *   **符号简化 (Trick):** PPT 中提到，将 $x$ 扩展为 $(x_1, ..., x_d, 1)$，并将 $b$ 看作是对应于常数项 1 的权重 $w_{d+1}$，模型统一写成 $y \approx \mathbf{x} \cdot \mathbf{w}$。这里 $\mathbf{x}$ 是增广后的行向量 `(1 x (d+1))`，$\mathbf{w}$ 是列向量 `((d+1) x 1)`。
-        *   **为什么这样做？** 数学表达更简洁，便于矩阵运算。编程实现时也更方便，不需要单独处理偏置项 $b$。
+        *   **为什么这样做？** <font color="#ffff00">数学表达更简洁，便于矩阵运算。编程实现时也更方便，不需要单独处理偏置项</font> $b$。
 
 *   **损失函数 (Loss Function): 均方误差 (MSE)**
-    *   $L(w, b) = \frac{1}{N} \sum_{i=1}^N (\hat{y}_i - y_i)^2$, 其中 $\hat{y}_i = w x_i + b$ (一元) 或 $\hat{y}_i = \mathbf{x}_i \cdot \mathbf{w}$ (多元)。
+    *   $$L(w, b) = \frac{1}{N} \sum_{i=1}^N (\hat{y}_i - y_i)^2$$, 其中 $\hat{y}_i = w x_i + b$ (一元) 或 $\hat{y}_i = \mathbf{x}_i \cdot \mathbf{w}$ (多元)。
     *   **为什么用 MSE？**
         1.  **直观：** 它度量了预测值 $\hat{y}_i$ 和真实值 $y_i$ 之间的平均“距离”的平方。我们希望这个距离越小越好。
         2.  **数学性质：**
@@ -123,15 +115,15 @@ PPT 列出了常用的绘图函数：`scatter` (散点图), `plot` (折线图), 
             $\mathbf{w}_{new} = \mathbf{w}_{old} - \alpha \nabla_{\mathbf{w}} L$
     *   **梯度的计算 (PPT 公式解读):**
         *   **一元：**
-            $\frac{\partial L}{\partial w} = \frac{2}{N} \sum_{i=1}^N (w x_i + b - y_i) x_i$
-            $\frac{\partial L}{\partial b} = \frac{2}{N} \sum_{i=1}^N (w x_i + b - y_i) \cdot 1$
+            $$\frac{\partial L}{\partial w} = \frac{2}{N} \sum_{i=1}^N (w x_i + b - y_i) x_i$$
+            $$\frac{\partial L}{\partial b} = \frac{2}{N} \sum_{i=1}^N (w x_i + b - y_i) \cdot 1$$
             *   **推导思路 (以 $\frac{\partial L}{\partial w}$ 为例):** 使用链式法则。$L = \frac{1}{N} \sum e_i^2$，其中 $e_i = (w x_i + b - y_i)$。
-            $\frac{\partial L}{\partial w} = \frac{1}{N} \sum \frac{\partial (e_i^2)}{\partial w} = \frac{1}{N} \sum 2 e_i \frac{\partial e_i}{\partial w}$.
-            由于 $\frac{\partial e_i}{\partial w} = \frac{\partial (w x_i + b - y_i)}{\partial w} = x_i$，代入即可得到结果。$\frac{\partial L}{\partial b}$ 同理，只是 $\frac{\partial e_i}{\partial b} = 1$。
+            $$\frac{\partial L}{\partial w} = \frac{1}{N} \sum \frac{\partial (e_i^2)}{\partial w} = \frac{1}{N} \sum 2 e_i \frac{\partial e_i}{\partial w}$$.
+            由于 $$\frac{\partial e_i}{\partial w} = \frac{\partial (w x_i + b - y_i)}{\partial w} = x_i$$，代入即可得到结果。$\frac{\partial L}{\partial b}$ 同理，只是 $\frac{\partial e_i}{\partial b} = 1$。
             *   **向量形式 (PPT):** $\frac{\partial L}{\partial w} = \frac{2}{N} \mathbf{x}^T (\mathbf{\hat{y}} - \mathbf{y})$ (这里 $\mathbf{x}$ 是 N x 1 列向量, $\mathbf{\hat{y}} = w\mathbf{x} + b\mathbf{1}$ 也是 N x 1)。这需要仔细核对 PPT 的符号定义，它似乎把 x, 1, y 都定义为 N x 1 列向量。如果 $\mathbf{x}, \mathbf{1}, \mathbf{y}$ 都是 N x 1 列向量，那么 $\mathbf{\hat{y}} - \mathbf{y}$ 是 N x 1， $\mathbf{x}^T$ 是 1 x N，结果是 1x1 标量，正确。$\frac{\partial L}{\partial b} = \frac{2}{N} \mathbf{1}^T (\mathbf{\hat{y}} - \mathbf{y})$ 同理。
         *   **多元 (向量形式，使用增广 $\mathbf{x}_i$ 和 $\mathbf{w}$):**
             $L(\mathbf{w}) = \frac{1}{N} \sum_{i=1}^N (\mathbf{x}_i \cdot \mathbf{w} - y_i)^2$.
-            PPT 给出的梯度 $\nabla_{\mathbf{w}} L = \frac{\partial L(\mathbf{w})}{\partial \mathbf{w}} = \frac{2}{N} \sum_{i=1}^N \mathbf{x}_i^T (\mathbf{x}_i \cdot \mathbf{w} - y_i)$.
+            PPT 给出的梯度 $$\nabla_{\mathbf{w}} L = \frac{\partial L(\mathbf{w})}{\partial \mathbf{w}} = \frac{2}{N} \sum_{i=1}^N \mathbf{x}_i^T (\mathbf{x}_i \cdot \mathbf{w} - y_i)$$.
             注意：这里 $\mathbf{x}_i$ 是 `1 x (d+1)` 行向量， $\mathbf{w}$ 是 `(d+1) x 1` 列向量，$\mathbf{x}_i \cdot \mathbf{w}$ 是标量。$\mathbf{x}_i^T$ 是 `(d+1) x 1` 列向量。所以梯度是一个 `(d+1) x 1` 的列向量，维度正确。
             **矩阵形式 (PPT):** $\nabla_{\mathbf{w}} L = \frac{2}{N} \mathbf{X}^T (\mathbf{X} \mathbf{w} - \mathbf{y})$.
             *   **解读：** $\mathbf{X}$ 是 $N \times (d+1)$ 的**设计矩阵** (design matrix)，每一行是一个样本 $\mathbf{x}_i$。$\mathbf{w}$ 是 $(d+1) \times 1$ 的参数向量。$\mathbf{y}$ 是 $N \times 1$ 的真实值向量。
@@ -150,7 +142,7 @@ PPT 列出了常用的绘图函数：`scatter` (散点图), `plot` (折线图), 
 
 ### 1. 引入与动机 (Hook & Motivation)
 
-*   **问题场景：** 想象一下，我们不再是预测房价（连续值），而是想判断一封邮件是否是垃圾邮件（是/否），或者一个肿瘤是良性还是恶性（良性/恶性）。这些都是**二分类 (Binary Classification)** 问题，输出结果是离散的类别（通常编码为 0 和 1）。
+*   **问题场景：** 想象一下，我们不再是预测房价（连续值），而是想判断一封邮件是否是垃圾邮件（是/否），或者一个肿瘤是良性还是恶性（良性/恶性）。这些都是**二分类 (Binary Classification)** 问题，<font color="#ffff00">输出结果是离散的类别</font>（通常编码为 0 和 1）。
 *   **线性回归的局限性：** 我们能不能直接用线性回归来做分类呢？比如，让类别 1 对应输出 1，类别 0 对应输出 0。
     *   模型：$\hat{y} = \mathbf{x} \cdot \mathbf{w}$
     *   问题：线性回归的输出 $\hat{y}$ 是 $(-\infty, +\infty)$ 的任意实数，但我们期望的输出是 0 或 1，或者至少是一个介于 0 和 1 之间的**概率**。如果 $\hat{y} = 1.5$ 或 $\hat{y} = -0.3$，这该如何解释为类别？
@@ -192,17 +184,15 @@ PPT 列出了常用的绘图函数：`scatter` (散点图), `plot` (折线图), 
 >$=\mathbf{w}\cdot \mathbf{x}$.
 
 .
-    2.  再用 Sigmoid 函数将这个得分转换为概率： $p = P(Y=1 | \mathbf{x}; \mathbf{w}) = \sigma(z) = \frac{1}{1 + e^{-(\mathbf{x} \cdot \mathbf{w})}}$。
+    2.  再用 Sigmoid 函数将这个<font color="#ffff00">得分转换为概率</font>： $p = P(Y=1 | \mathbf{x}; \mathbf{w}) = \sigma(z) = \frac{1}{1 + e^{-(\mathbf{x} \cdot \mathbf{w})}}$。
     *   这个 $p$ 就是模型预测的 $\mathbf{x}$ 属于类别 1 的概率。
 
 *   **为什么叫“逻辑”回归 / “对数几率”回归？(PPT 提及)**
     *   **几率 (Odds):** 指事件发生的概率与不发生的概率之比： $Odds = \frac{p}{1-p}$。 $p$ 在 (0, 1) 之间，Odds 在 $(0, +\infty)$ 之间。
     *   **对数几率 (Log-odds / Logit):** 对几率取自然对数： $\text{Logit} = \ln(\frac{p}{1-p})$。
     *   **神奇的联系：** 让我们从逻辑回归模型 $p = \frac{1}{1 + e^{-z}}$ 反推 Logit：
-        *   $1 - p = 1 - \frac{1}{1 + e^{-z}} = \frac{1 + e^{-z} - 1}{1 + e^{-z}} = \frac{e^{-z}}{1 + e^{-z}}$
-        *   $\frac{p}{1-p} = \frac{1 / (1 + e^{-z})}{e^{-z} / (1 + e^{-z})} = \frac{1}{e^{-z}} = e^z$
-        *   $\ln(\frac{p}{1-p}) = \ln(e^z) = z$
-    *   **结论：** 逻辑回归模型实际上是在用线性模型 $\mathbf{z} = \mathbf{x} \cdot \mathbf{w}$ 来拟合**对数几率**！
+    $$1 - p = 1 - \frac{1}{1 + e^{-z}} = \frac{1 + e^{-z} - 1}{1 + e^{-z}} = \frac{e^{-z}}{1 + e^{-z}}$$   $$\frac{p}{1-p} = \frac{1 / (1 + e^{-z})}{e^{-z} / (1 + e^{-z})} = \frac{1}{e^{-z}} = e^z$$$$\ln(\frac{p}{1-p}) = \ln(e^z) = z$$
+    *   **结论：** 逻辑回归模型实际上是在用<font color="#ffff00">线性模型</font> $\mathbf{z} = \mathbf{x} \cdot \mathbf{w}$ 来拟合**对数几率**！
         $$ \ln\left(\frac{P(Y=1|\mathbf{x})}{1 - P(Y=1|\mathbf{x})}\right) = \mathbf{x} \cdot \mathbf{w} $$
     *   这就是它名字的由来。虽然它最终预测的是概率 $p$，但其内部核心是对 Logit 进行线性回归。由于<font color="#ffff00">最终目标通常是分类，所以它被归为分类算法，但其数学形式和“回归”有关</font>。
 
@@ -215,7 +205,7 @@ PPT 列出了常用的绘图函数：`scatter` (散点图), `plot` (折线图), 
     *   $\mathbf{x}$ 是 $(1 \times (d+1))$ 的（增广）行向量。
     *   $\mathbf{w}$ 是 $((d+1) \times 1)$ 的参数向量（包含偏置 $b$）。
     *   $\mathbf{x} \cdot \mathbf{w}$ 是线性组合（标量）。
-    *   $\sigma(z) = \frac{1}{1 + e^{-z}}$ 是 Sigmoid 函数。
+    *   $$\sigma(z) = \frac{1}{1 + e^{-z}}$$ 是 Sigmoid 函数。
     *   $p$ 是模型预测的 $\mathbf{x}$ 属于类别 1 的概率，因此 $P(Y=0 | \mathbf{x}; \mathbf{w}) = 1 - p$。
 
 ### 5. 核心原理与推导过程 (Core Principles & Derivation Walkthrough)
@@ -224,20 +214,22 @@ PPT 列出了常用的绘图函数：`scatter` (散点图), `plot` (折线图), 
 
 #### 5.1 损失函数：为什么不用 MSE？为什么用交叉熵？
 
-*   **MSE 的问题：** 如果我们直接用 MSE 来衡量预测概率 $p = \sigma(\mathbf{x} \mathbf{w})$ 和真实标签 $y \in \{0, 1\}$ 之间的差距，即 $L_{MSE}(\mathbf{w}) = \frac{1}{N} \sum (\sigma(\mathbf{x}_i \mathbf{w}) - y_i)^2$。这个损失函数对于 $\mathbf{w}$ 来说是**非凸**的！它会有很多<font color="#ffff00">局部最小值</font>，梯度下降法很难保证找到全局最优解。这是因为 Sigmoid 函数的非线性性质引入了复杂性。
+*   **MSE 的问题：** 如果我们直接用 MSE 来衡量预测概率 $p = \sigma(\mathbf{x} \mathbf{w})$ 和真实标签 $y \in \{0, 1\}$ 之间的差距，即 $$L_{MSE}(\mathbf{w}) = \frac{1}{N} \sum (\sigma(\mathbf{x}_i \mathbf{w}) - y_i)^2$$这个损失函数对于 $\mathbf{w}$ 来说是**非凸**的！它会有很多<font color="#ffff00">局部最小值</font>，梯度下降法很难保证找到全局最优解。这是因为 Sigmoid 函数的非线性性质引入了复杂性。
 
-*   **新的思路：最大似然估计 (Maximum Likelihood Estimation, MLE)**
-    *   **思想：** 我们应该选择什么样的参数 $\mathbf{w}$，使得在给定训练数据 $\mathbf{X} = \{\mathbf{x}_1, ..., \mathbf{x}_N\}$ 的情况下，观测到对应的真实标签 $\mathbf{Y} = \{y_1, ..., y_N\}$ 的**概率最大**？
-    *   **单个样本的似然：** 对于一个样本 $(\mathbf{x}_i, y_i)$，模型预测其属于类别 1 的概率是 $p_i = \sigma(\mathbf{x}_i \mathbf{w})$。
-        *   如果真实标签 $y_i = 1$，我们希望 $p_i$ 尽可能大。观测到 $y_i=1$ 的概率就是 $p_i$。
-        *   如果真实标签 $y_i = 0$，我们希望 $p_i$ 尽可能小，也就是 $1-p_i$ 尽可能大。观测到 $y_i=0$ 的概率就是 $1-p_i$。
-        *   **统一表达：** 我们可以用一个巧妙的式子统一这两种情况：
-            $$ P(y_i | \mathbf{x}_i; \mathbf{w}) = p_i^{y_i} (1 - p_i)^{1 - y_i} $$
-            验证一下：
-            *   当 $y_i = 1$ 时，上式变为 $p_i^1 (1 - p_i)^0 = p_i$。
-            *   当 $y_i = 0$ 时，上式变为 $p_i^0 (1 - p_i)^1 = 1 - p_i$。
-            完美！这个式子正好表达了模型预测正确的概率。
-    *   **整个数据集的似然：** 假设样本之间是独立同分布的 (i.i.d.)，那么观测到整个数据集 $\mathbf{Y}$ 的联合概率（似然函数 $L(\mathbf{w})$）就是所有单个样本概率的乘积：
+> [!NOTE]
+> *   **新的思路：最大似然估计 (Maximum Likelihood Estimation, MLE)**
+>     *   **思想：** 我们应该选择什么样的参数 $\mathbf{w}$，使得在给定训练数据 $\mathbf{X} = \{\mathbf{x}_1, ..., \mathbf{x}_N\}$ 的情况下，观测到对应的真实标签 $\mathbf{Y} = \{y_1, ..., y_N\}$ 的**概率最大**？
+>     *   **单个样本的似然：** 对于一个样本 $(\mathbf{x}_i, y_i)$，模型预测其属于类别 1 的概率是 $p_i = \sigma(\mathbf{x}_i \mathbf{w})$。
+>         *   如果真实标签 $y_i = 1$，我们希望 $p_i$ 尽可能大。观测到 $y_i=1$ 的概率就是 $p_i$。
+>         *   如果真实标签 $y_i = 0$，我们希望 $p_i$ 尽可能小，也就是 $1-p_i$ 尽可能大。观测到 $y_i=0$ 的概率就是 $1-p_i$。
+>         *   **统一表达：** 我们可以用一个巧妙的式子统一这两种情况：
+>             $$ P(y_i | \mathbf{x}_i; \mathbf{w}) = p_i^{y_i} (1 - p_i)^{1 - y_i} $$
+>             验证一下：
+>             *   当 $y_i = 1$ 时，上式变为 $p_i^1 (1 - p_i)^0 = p_i$。
+>             *   当 $y_i = 0$ 时，上式变为 $p_i^0 (1 - p_i)^1 = 1 - p_i$。
+>             完美！这个式子正好表达了模型预测正确的概率。
+>     *   **整个数据集的似然：** 假设样本之间是独立同分布的 (i.i.d.)，那么观测到整个数据集 $\mathbf{Y}$ 的联合概率（似然函数 $L(\mathbf{w})$）就是*所有单个样本概率的乘积*：
+
         $$ L(\mathbf{w}) = P(\mathbf{Y} | \mathbf{X}; \mathbf{w}) = \prod_{i=1}^N P(y_i | \mathbf{x}_i; \mathbf{w}) = \prod_{i=1}^N p_i^{y_i} (1 - p_i)^{1 - y_i} $$
     *   **目标：** 找到 $\mathbf{w}^* = \arg \max_{\mathbf{w}} L(\mathbf{w})$。
 
@@ -246,11 +238,11 @@ PPT 列出了常用的绘图函数：`scatter` (散点图), `plot` (折线图), 
         $$ \ell(\mathbf{w}) = \ln L(\mathbf{w}) = \ln \left( \prod_{i=1}^N p_i^{y_i} (1 - p_i)^{1 - y_i} \right) $$
         $$ \ell(\mathbf{w}) = \sum_{i=1}^N \ln \left( p_i^{y_i} (1 - p_i)^{1 - y_i} \right) $$
         $$ \ell(\mathbf{w}) = \sum_{i=1}^N [ y_i \ln p_i + (1 - y_i) \ln(1 - p_i) ] $$
-    *   **最大化似然 vs 最小化损失：** 我们的目标是最大化对数似然 $\ell(\mathbf{w})$。在机器学习中，我们习惯于**最小化**损失函数。因此，我们定义损失函数 $J(\mathbf{w})$ 为**负的平均对数似然 (Negative Average Log-Likelihood)**：
+    *   **最大化似然 vs 最小化损失：** 我们的目标是最大化对数似然 $\ell(\mathbf{w})$。在机器学习中，我们习惯于**最小化**损失函数。因此，我们定义损失函数 $J(\mathbf{w})$ 为**负的平均   对数似然 (Negative Average Log-Likelihood)**：
         $$ J(\mathbf{w}) = -\frac{1}{N} \ell(\mathbf{w}) = -\frac{1}{N} \sum_{i=1}^N [ y_i \ln p_i + (1 - y_i) \ln(1 - p_i) ] $$
         *   **这个就是逻辑回归的损失函数，也称为二元交叉熵损失 (Binary Cross-Entropy Loss)。**
     *   **为什么叫交叉熵？** 熵是信息论中的概念，衡量不确定性。交叉熵衡量的是，用一个概率分布 $p$（模型的预测）来表示另一个真实分布 $y$（0或1）时所需要的“额外信息量”或“距离”。最小化交叉熵，就是让模型的预测分布 $p$ 尽可能地接近真实的标签分布 $y$。
-    *   **性质：** 这个 $J(\mathbf{w})$ 函数对于 $\mathbf{w}$ 是**凸函数**！这意味着梯度下降法可以保证找到全局最小值。这是选择 MLE 而非 MSE 的一个重要原因。
+    *   **性质：** 这个 $J(\mathbf{w})$ 函数对于 $\mathbf{w}$ 是**凸函数**！<font color="#ffff00">这意味着梯度下降法可以保证找到全局最小值</font>。这是选择 MLE 而非 MSE 的一个重要原因。
 
 #### 5.2 梯度推导：损失函数对参数 $\mathbf{w}$ 求导
 
@@ -259,7 +251,7 @@ PPT 列出了常用的绘图函数：`scatter` (散点图), `plot` (折线图), 
 *   **推导链条 (Chain Rule):** 我们需要从 $J$ 对 $w_j$ 求导。中间涉及到 $p_i = \sigma(z_i)$ 和 $z_i = \mathbf{x}_i \cdot \mathbf{w} = \sum_k x_{ik} w_k$。
     $$ \frac{\partial J}{\partial w_j} = \frac{\partial}{\partial w_j} \left( -\frac{1}{N} \sum_{i=1}^N [ y_i \ln p_i + (1 - y_i) \ln(1 - p_i) ] \right) $$
     $$ \frac{\partial J}{\partial w_j} = -\frac{1}{N} \sum_{i=1}^N \frac{\partial}{\partial w_j} [ y_i \ln p_i + (1 - y_i) \ln(1 - p_i) ] $$
-    根据链式法则，$\frac{\partial [\cdot]}{\partial w_j} = \frac{\partial [\cdot]}{\partial p_i} \frac{\partial p_i}{\partial z_i} \frac{\partial z_i}{\partial w_j}$。我们分步计算这三项：
+    根据链式法则，$$\frac{\partial [\cdot]}{\partial w_j} = \frac{\partial [\cdot]}{\partial p_i} \frac{\partial p_i}{\partial z_i} \frac{\partial z_i}{\partial w_j}$$。我们分步计算这三项：
 
     1.  **$\frac{\partial z_i}{\partial w_j}$：**
         $z_i = \mathbf{x}_i \cdot \mathbf{w} = x_{i1}w_1 + x_{i2}w_2 + ... + x_{ij}w_j + ... + x_{i,d+1}w_{d+1}$
@@ -267,12 +259,10 @@ PPT 列出了常用的绘图函数：`scatter` (散点图), `plot` (折线图), 
         $$ \frac{\partial z_i}{\partial w_j} = x_{ij} $$
         (其中 $x_{ij}$ 是第 $i$ 个样本的第 $j$ 个特征值，如果 $j=d+1$，则 $x_{i,d+1}=1$)
 
-    2.  **$\frac{\partial p_i}{\partial z_i}$：Sigmoid 函数的导数 (PPT 中有)**
-        $p_i = \sigma(z_i) = (1 + e^{-z_i})^{-1}$
+    2.  **$\frac{\partial p_i}{\partial z_i}$：Sigmoid 函数的导数 (PPT 中有)** *p comes from sigmoid function!*
+        $$p_i = \sigma(z_i) = (1 + e^{-z_i})^{-1}$$
         使用导数公式 $(u^{-1})' = -u^{-2} u'$ 和 $(e^{-z_i})' = -e^{-z_i}$：
-        $$ \frac{d p_i}{d z_i} = -(1 + e^{-z_i})^{-2} \cdot (-e^{-z_i}) $$
-        $$ \frac{d p_i}{d z_i} = \frac{e^{-z_i}}{(1 + e^{-z_i})^2} $$
-        这个形式不够简洁，我们把它变成 $p_i$ 的形式：
+        $$ \frac{d p_i}{d z_i} = -(1 + e^{-z_i})^{-2} \cdot (-e^{-z_i}) $$$$ \frac{d p_i}{d z_i} = \frac{e^{-z_i}}{(1 + e^{-z_i})^2} $$        这个形式不够简洁，我们把它变成 $p_i$ 的形式：
         $$ \frac{d p_i}{d z_i} = \frac{1}{1 + e^{-z_i}} \cdot \frac{e^{-z_i}}{1 + e^{-z_i}} $$
         $$ \frac{d p_i}{d z_i} = \frac{1}{1 + e^{-z_i}} \cdot \frac{(1 + e^{-z_i}) - 1}{1 + e^{-z_i}} $$
         $$ \frac{d p_i}{d z_i} = \frac{1}{1 + e^{-z_i}} \cdot \left( 1 - \frac{1}{1 + e^{-z_i}} \right) $$
@@ -283,20 +273,18 @@ PPT 列出了常用的绘图函数：`scatter` (散点图), `plot` (折线图), 
     3.  **$\frac{\partial [\cdot]}{\partial p_i}$：**
         $$ \frac{\partial}{\partial p_i} [ y_i \ln p_i + (1 - y_i) \ln(1 - p_i) ] = y_i \frac{1}{p_i} + (1 - y_i) \frac{1}{1 - p_i} \cdot (-1) $$
         $$ = \frac{y_i}{p_i} - \frac{1 - y_i}{1 - p_i} $$
-        通分合并：
-        $$ = \frac{y_i(1 - p_i) - p_i(1 - y_i)}{p_i(1 - p_i)} $$
-        $$ = \frac{y_i - y_i p_i - p_i + y_i p_i}{p_i(1 - p_i)} $$
-        $$ = \frac{y_i - p_i}{p_i(1 - p_i)} $$
-
+        通分合并：$$ = \frac{y_i(1 - p_i) - p_i(1 - y_i)}{p_i(1 - p_i)} $$$$ = \frac{y_i - y_i p_i - p_i + y_i p_i}{p_i(1 - p_i)} $$$$ = \frac{y_i - p_i}{p_i(1 - p_i)} $$
     *   **组合起来：**
-        $$ \frac{\partial [\cdot]}{\partial w_j} = \left( \frac{y_i - p_i}{p_i(1 - p_i)} \right) \cdot (p_i (1 - p_i)) \cdot (x_{ij}) $$
-        $$ = (y_i - p_i) x_{ij} $$
+        $$ \frac{\partial [\cdot]}{\partial w_j} = \left( \frac{y_i - p_i}{p_i(1 - p_i)} \right) \cdot (p_i (1 - p_i)) \cdot (x_{ij}) $$$$ = (y_i - p_i) x_{ij} $$
         这个结果非常简洁！
 
     *   **代回 $\frac{\partial J}{\partial w_j}$：**
         $$ \frac{\partial J}{\partial w_j} = -\frac{1}{N} \sum_{i=1}^N (y_i - p_i) x_{ij} $$
-        $$ \frac{\partial J}{\partial w_j} = \frac{1}{N} \sum_{i=1}^N (p_i - y_i) x_{ij} $$
-        这和 PPT 中的 $\frac{\partial L(\mathbf{w})}{\partial w_j} = \frac{1}{N} \sum_{i=1}^N x_{ij} (p_i - y_i)$ (忽略了因子2，可能 PPT 的 L 定义不同或省略了) 完全一致！
+
+> [!important] 
+> $$ \frac{\partial J}{\partial w_j} = \frac{1}{N} \sum_{i=1}^N (p_i - y_i) x_{ij} $$
+
+这和 PPT 中的 $\frac{\partial L(\mathbf{w})}{\partial w_j} = \frac{1}{N} \sum_{i=1}^N x_{ij} (p_i - y_i)$ (忽略了因子2，可能 PPT 的 L 定义不同或省略了) 完全一致！
 
 *   **梯度的向量/矩阵形式 (Vector/Matrix Form):**
     梯度 $\nabla_{\mathbf{w}} J(\mathbf{w})$ 是一个列向量，第 $j$ 个元素是 $\frac{\partial J}{\partial w_j}$。我们可以把所有这些分量组合起来：

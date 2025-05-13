@@ -8,59 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "91e0b6257d970122",
+            "id": "e2c9a58ffe0f78fb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AIPython 20 IntroductionToAI.md",
+                "file": "高等数学II.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AIPython 20 IntroductionToAI"
+              "title": "高等数学II"
             }
           },
           {
-            "id": "c384523298d701d0",
+            "id": "ef53968b34e41986",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AIPython Project2Regression.md",
+                "file": "2025-05-08.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AIPython Project2Regression"
-            }
-          },
-          {
-            "id": "c0cb936df6d27529",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Gemini VectorsInAI.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Gemini VectorsInAI"
-            }
-          },
-          {
-            "id": "828edea1118437af",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "GEMINI Teacher Prompt.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "GEMINI Teacher Prompt"
+              "title": "2025-05-08"
             }
           }
         ],
@@ -96,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "file:projec",
+                "query": "FN",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -139,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Gemini_18.06SimilarMatrix.md",
+                "file": "2025-05-08.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,7 +121,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Gemini_18.06SimilarMatrix 的反向链接列表"
+              "title": "2025-05-08 的反向链接列表"
             }
           },
           {
@@ -186,13 +158,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "传习录导读 第七课.md",
+                "file": "AIPython 23PytorchApplication.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "传习录导读 第七课 的大纲"
+              "title": "AIPython 23PytorchApplication 的大纲"
             }
           },
           {
@@ -240,12 +212,11 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 355.5,
-    "collapsed": true
+    "width": 355.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -262,45 +233,45 @@
       "obsidian-spaced-repetition:复习卡片": false
     }
   },
-  "active": "c384523298d701d0",
+  "active": "ef53968b34e41986",
   "lastOpenFiles": [
+    "2025-05-12.md",
+    "Gemini 曲面积分法向量推导.md",
+    "高等数学II.md",
+    "Gemini 18.02FinalChapters.md",
+    "GEMINI Teacher Prompt.md",
+    "AIPython 23PytorchApplication.md",
+    "AIPython 18 MatplotlibAndMultivariableRegression.md",
+    "AIPython 21 IntroductionToMachineLearning.md",
+    "Assignment5_report.md",
+    "Pasted image 20250512203751.png",
+    "Pasted image 20250512203334.png",
+    "AI导论.md",
+    "AI 简要入门理解.md",
+    "AIPython 19 Gemini LogisticRegression.md",
+    "AIPython Project2Regression.md",
+    "AIPython 17.md",
+    "AIPython 16 Introduction to Numpy.md",
+    "Gemini AutoGrad.md",
+    "Pasted image 20250512152648.png",
+    "Pasted image 20250512152633.png",
+    "Pasted image 20250512152548.png",
+    "CS61B L9 Interface,Inheritance.md",
+    "Gemini 高等代数II 特征值与对角化.md",
+    "未命名 7.md",
+    "2025-05-09.md",
+    "2025-05-08.md",
+    "高等代数II.md",
+    "AIPython 22IntroductionToPytorch.md",
+    "AIPython 20 IntroductionToAI.md",
+    "OB 11 ApplyingMotivationTheory.md",
+    "OB 25Spring.md",
     "Pasted image 20250505191119.png",
     "Pasted image 20250505191113.png",
-    "AI导论.md",
-    "AIPython Project2Regression.md",
-    "Gemini_18.06SimilarMatrix.md",
-    "线性代数.md",
-    "Gemini 18.06BlockDeterminant.md",
-    "Gemini 18.06OrthonormalMatrix.md",
-    "GEMINI Teacher Prompt.md",
-    "Gemini 18.06MarkovMatrix.md",
-    "Gemini 18.06LambdaMatrixUnderstd.md",
-    "Grok_18.06GAandAM, NondiagonalizableMatrices.md",
-    "Gemini_18.06ReflectionMatrix.md",
-    "GEMINI Teacher Prompt-Reduced.md",
-    "Gemini VectorsInAI.md",
-    "18.06 15 Subspace Projection.md",
-    "高等代数II.md",
-    "AIPython 20 IntroductionToAI.md",
-    "AIPython 21 IntroductionToMachineLearning.md",
-    "Gemini Sol 24 Midterm.md",
-    "Gemini Sol 23 Midterm.md",
-    "Gemini Sol 21 Midterm.md",
-    "Gemini Sol 22 Midterm.md",
-    "高数II 5 复合函数与隐函数微分.md",
-    "高等代数II 6 复实有理系数多项式.md",
-    "CS61A 1.3 Defining New Functions.md",
-    "CS61A 3.3 Exceptions.md",
     "Pasted image 20250416223242.png",
     "Pasted image 20250412220850.png",
     "Pasted image 20250410190725.png",
     "离散数学",
-    "Pasted image 20250401155203.png",
-    "Pasted image 20250401145330.png",
-    "Pasted image 20250331154251.png",
-    "Pasted image 20250331144715.png",
-    "Pasted image 20250331095042.png",
-    "1-2-compile-interpret.svg",
     "ch6_1多元函数微分学.pdf.pdf",
     "ch6_2多元函数的极限.pdf",
     "OneNote/高数/高数II",

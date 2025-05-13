@@ -21,7 +21,10 @@ AIPython 15 Midterm test
 [[AIPython 21 IntroductionToMachineLearning]]
 
 [[AIPython Project2Regression]]
+[[AIPython 22IntroductionToPytorch]]
+[[AIPython 23PytorchApplication]]
 
+[[Gemini AutoGrad]]
 [[Gemini VectorsInAI]]
 [[Gemini PythonVariableConfusion]]
 [[Gemini PythonBuiltinAlgoFuncs]]
@@ -42,22 +45,11 @@ AIPython 15 Midterm test
 [[Gemini numpy使用简明教程]]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 [[Lab1-1]]
 [[Lab1-2 Hanoi Tower]]
 [[Assignment3_report]]
 [[Assignment4 report]]
+[[Assignment5_report]]
 
 
 [[Metaso_jieba application]]

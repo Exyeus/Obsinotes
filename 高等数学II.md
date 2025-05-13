@@ -1,4 +1,5 @@
 *ASKMANYAI*
+[[Gemini 曲面积分法向量推导]]
 [[Gemini_极坐标检验满足而最终不连续]]
 [[Gemini_极坐标和参数方程检验成立不包括任意曲线途径接近]]
 [[Gemini_对x连续对y连续以及完全连续]]
@@ -35,6 +36,8 @@
 [[Gemini 曲线积分与曲面积分细节]]
 [[Gemini 积分变换技巧]]
 
+[[Gemini 级数Cpt10.1;2;3;4]]
+[[Gemini 逐点收敛与一致收敛]]
 
 
 
@@ -54,6 +57,7 @@
 [[Subject 13 三重积分]]
 [[Subject 14 球面坐标]]
 [[GPT on Implicit Differentiation]]
+[[Gemini 18.02FinalChapters]]
 
 ---
 

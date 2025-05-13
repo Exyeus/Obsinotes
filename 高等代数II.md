@@ -16,6 +16,7 @@
 [[Gemini 高等代数II_非平凡子空间一例]]
 [[Gemini 高等代数II_多项式相关线性空间一例]]
 [[Gemini 高等代数II_复习二次型 ]]
+[[Gemini 高等代数II 特征值与对角化]]
 
 [[Gemini Sol 23 Midterm]]
 [[Gemini Sol 22 Midterm]]
