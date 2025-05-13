@@ -27,16 +27,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2025-05-08.md",
+                "file": "柴特基比提博士/CodingNote/YOJ_TREE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-05-08"
+              "title": "YOJ_TREE"
+            }
+          },
+          {
+            "id": "8b9f771039e19922",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Gemini_YOJ_1366_NumpyFails.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Gemini_YOJ_1366_NumpyFails"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -212,7 +226,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -233,8 +247,14 @@
       "obsidian-spaced-repetition:复习卡片": false
     }
   },
-  "active": "ef53968b34e41986",
+  "active": "8b9f771039e19922",
   "lastOpenFiles": [
+    "Gemini_YOJ_1366_NumpyFails.md",
+    "柴特基比提博士/CodingNote/YOJ_TREE.md",
+    "高等代数II 6 复实有理系数多项式.md",
+    "C++ STL iterator auto.md",
+    "Gemimi_YOJ_1369_PythonEfficiency.md",
+    "2025-05-08.md",
     "2025-05-12.md",
     "Gemini 曲面积分法向量推导.md",
     "高等数学II.md",
@@ -260,12 +280,6 @@
     "Gemini 高等代数II 特征值与对角化.md",
     "未命名 7.md",
     "2025-05-09.md",
-    "2025-05-08.md",
-    "高等代数II.md",
-    "AIPython 22IntroductionToPytorch.md",
-    "AIPython 20 IntroductionToAI.md",
-    "OB 11 ApplyingMotivationTheory.md",
-    "OB 25Spring.md",
     "Pasted image 20250505191119.png",
     "Pasted image 20250505191113.png",
     "Pasted image 20250416223242.png",

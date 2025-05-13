@@ -1,7 +1,7 @@
 ---
-sr-due: 2025-11-24
-sr-interval: 214
-sr-ease: 270
+sr-due: 2027-07-29
+sr-interval: 807
+sr-ease: 290
 ---
 
 #review 
