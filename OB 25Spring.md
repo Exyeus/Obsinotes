@@ -1,4 +1,4 @@
-[[OB 1 Introduction to OB]]
+### [[OB 1 Introduction to OB]]
 [[OB 2 Models, Theories and Levels]]
 [[OB HW 1 Analysis on Oriental Selection(东方甄选) Essay Controversy]]
 [[OB 3 Personality and its application]]
@@ -18,6 +18,7 @@
 
 [[OB 10 CaseStudyOnMotivation]]
 [[OB 11 ApplyingMotivationTheory]]
+[[OB 12 Group]]
 
 
 
