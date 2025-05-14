@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Gemini_YOJ_1366_NumpyFails.md",
+                "file": "2025-05-14.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Gemini_YOJ_1366_NumpyFails"
+              "title": "2025-05-14"
             }
           }
         ],
@@ -125,7 +125,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2025-05-08.md",
+                "file": "Gemini CS70 Note5 GraphTheory.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "2025-05-08 的反向链接列表"
+              "title": "Gemini CS70 Note5 GraphTheory 的反向链接列表"
             }
           },
           {
@@ -172,13 +172,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AIPython 23PytorchApplication.md",
+                "file": "2025-05-14.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "AIPython 23PytorchApplication 的大纲"
+              "title": "2025-05-14 的大纲"
             }
           },
           {
@@ -226,7 +226,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -249,6 +249,12 @@
   },
   "active": "8b9f771039e19922",
   "lastOpenFiles": [
+    "Gemini CS70 Note5 GraphTheory.md",
+    "2025-05-14.md",
+    "离散数学.md",
+    "Gemini CS70 Note4 StableMatching.md",
+    "CS70 Note6 Modular Arithmetic.md",
+    "GEMINI Teacher Prompt.md",
     "Gemini_YOJ_1366_NumpyFails.md",
     "柴特基比提博士/CodingNote/YOJ_TREE.md",
     "高等代数II 6 复实有理系数多项式.md",
@@ -259,7 +265,6 @@
     "Gemini 曲面积分法向量推导.md",
     "高等数学II.md",
     "Gemini 18.02FinalChapters.md",
-    "GEMINI Teacher Prompt.md",
     "AIPython 23PytorchApplication.md",
     "AIPython 18 MatplotlibAndMultivariableRegression.md",
     "AIPython 21 IntroductionToMachineLearning.md",
@@ -272,14 +277,9 @@
     "AIPython Project2Regression.md",
     "AIPython 17.md",
     "AIPython 16 Introduction to Numpy.md",
-    "Gemini AutoGrad.md",
     "Pasted image 20250512152648.png",
     "Pasted image 20250512152633.png",
     "Pasted image 20250512152548.png",
-    "CS61B L9 Interface,Inheritance.md",
-    "Gemini 高等代数II 特征值与对角化.md",
-    "未命名 7.md",
-    "2025-05-09.md",
     "Pasted image 20250505191119.png",
     "Pasted image 20250505191113.png",
     "Pasted image 20250416223242.png",
