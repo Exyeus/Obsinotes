@@ -1,6 +1,6 @@
 #review 
 
-求 $\unicode{8751}_{S^{+}} \cos\left \langle r,n \right \rangle / |r|^{2} dS$ ，其中 $r=(x,y,z)$, $n$ 为闭曲面 $S$ 的外侧单位法向量，$S$ 依次为：
+求 $$\unicode{8751}_{S^{+}} \cos\left \langle r,n \right \rangle / |r|^{2} dS$$ ，其中 $r=(x,y,z)$, $n$ 为闭曲面 $S$ 的外侧单位法向量，$S$ 依次为：
 1. $x^{2}+y^{2} +z^{2} =R^{2}$ ;
 2. $\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}+\frac{z^{2}}{c^{2}}=1$
 3. 不包含原点的任意光滑闭曲面。
@@ -15,14 +15,14 @@
 
 想象一下，你站在一个点光源（比如一个小灯泡）旁边。这个灯泡向四面八方发出光线。现在，我们用一个封闭的罩子（比如一个球形玻璃罩、一个椭球形罩子，或者任何奇形怪状但没有洞的罩子）把这个灯泡罩住。我们想问：穿过这个罩子表面的总“光通量”是多少？
 
-这里的“光通量”可以理解为光线穿过表面的强度和方向的一个度量。如果光线垂直穿过表面，贡献就大；如果平行于表面掠过，贡献就小。我们今天要研究的积分 $\unicode{8751}_{S^{+}} \frac{\cos\langle r, n \rangle}{|r|^2} dS$ 就和这个想法非常相似。
+这里的“光通量”可以理解为光线穿过表面的强度和方向的一个度量。如果光线垂直穿过表面，贡献就大；如果平行于表面掠过，贡献就小。我们今天要研究的积分 $$\unicode{8751}_{S^{+}} \frac{\cos\langle r, n \rangle}{|r|^2} dS$$ 就和这个想法非常相似。
 
 *   $r = (x,y,z)$ 是从原点（我们假设光源在原点）指向<font color="#ffff00">罩子上</font>某一点 $P$ 的向量。
 *   $|r|$ 是点 $P$ 到原点的距离。$|r|^2$ 就是距离的平方。
 *   $n$ 是在点 $P$ 处，垂直于罩子表面、指向外侧的单位向量（就像一个小箭头，告诉你表面的朝向）。
 *   $\langle r, n \rangle$ 是向量 $r$ 和法向量 $n$ 之间的夹角。$\cos\langle r, n \rangle$ 衡量了 $r$ 的方向和表面法线方向的一致程度。如果 $r$ 和 $n$ 方向相同（光线垂直射出），$\cos=1$；如果垂直（光线平行于表面），$\cos=0$。
 *   $dS$ 代表罩子表面上一小块区域的面积。
-*   $\unicode{8751}_{S^{+}}$ 表示把罩子表面分成无数小块，计算每一小块上的 $\frac{\cos\langle r, n \rangle}{|r|^2} dS$ 值，然后全部加起来。
+*   $\unicode{8751}_{S^{+}}$ 表示把罩子表面分成无数小块，计算每一小块上的 $$\frac{\cos\langle r, n \rangle}{|r|^2} dS$$ 值，然后全部加起来。
 
 **为什么我们要关心这个积分呢？**
 
@@ -43,9 +43,12 @@
 *   **曲面积分 (Surface Integral):**
     *   **标量场积分:** $\iint_S f(x,y,z) \, dS$ 是将标量函数 $f$ 在曲面 $S$ 上各点的值乘以微小面积 $dS$ 再加总，可以想象成计算曲面的总质量（如果 $f$ 是密度）。
     *   **向量场积分 (通量):** $\unicode{8751}_S F \cdot n \, dS$ 或 $\iint_S F \cdot dS$ 计算的是向量场 $F$ 穿过曲面 $S$ 的**通量**。$F \cdot n$ 是 $F$ 在法线方向上的分量，乘以 $dS$ 就是穿过小面积 $dS$ 的通量。我们今天要计算的积分就是这种类型。
-*   **散度 (Divergence):** 对于一个向量场 $F = (P(x,y,z), Q(x,y,z), R(x,y,z))$，它的散度是一个标量，定义为 $\nabla \cdot F = \text{div } F = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}$。散度衡量了一个向量场在一个点附近的“源”或“汇”的强度。如果散度为正，表示该点像个源头，有东西向外流；如果为负，像个漏斗，有东西向内汇聚；如果为零，表示流入和流出恰好平衡（或者根本没有流）。
+*   **散度 (Divergence):** 对于一个向量场 $$F = (P(x,y,z), Q(x,y,z), R(x,y,z))$$，它的散度是一个标量，定义为 $$\nabla \cdot F = \text{div } F = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}$$。散度衡量了一个向量场在一个点附近的“源”或“汇”的强度。如果散度为正，表示该点像个源头，有东西向外流；如果为负，像个漏斗，有东西向内汇聚；如果为零，表示流入和流出恰好平衡（或者根本没有流）。
 
 好，有了这些基本概念，我们就可以开始探索了。
+
+> [!NOTE]
+> $$\nabla=\left( \mathbf{i} \frac{\partial}{\partial x}+\mathbf{j} \frac{\partial}{\partial y} + \mathbf{k} \frac{\partial}{\partial z} \right)$$
 
 ## 3. 直观解释与感性认识 (Intuitive Explanation)
 
@@ -61,7 +64,10 @@
 
 它其实代表了由原点出发、穿过曲面微元 $dS$ 的**立体角** (Solid Angle) 的微元 $d\Omega$。
 
-想象一下，你站在原点看一小块曲面 $dS$。这块曲面在你视野里占据了多大的“空间角度”？这就是立体角。平面角用弧度衡量（一圈是 $2\pi$），立体角用球面度 (steradians, sr) 衡量（整个空间是 $4\pi$ sr）。
+> [!info]
+> $$\Omega =\frac{A}{R^{2} }$$
+
+想象一下，你站在原点看一小块曲面 $dS$。这块曲面在你视野里占据了多大的“空间角度”？这就是立体角。平面角用弧度衡量（一圈是 $2\pi$），[[Metaso_立体角]]用球面度 (steradians, sr) 衡量（整个空间是 $4\pi$ sr）。
 
 ![Solid Angle Illustration](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Solid_angle.svg/300px-Solid_angle.svg.png)
 *(图片来源: Wikimedia Commons)*
@@ -83,6 +89,16 @@
 现在，我们把直观理解转化为更精确的数学语言。
 
 我们要计算的积分是 $I = \unicode{8751}_{S^{+}} \frac{\cos\langle r, n \rangle}{|r|^2} dS$。
+
+> [!info]
+> 对于一个由 $z = f(x, y)$ 定义的曲面 $S$ 在 $xy$ 平面区域 $R$ 上的投影，其面积微元 $dS$ 可以表示为：
+> $$ dS = \sqrt{1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y}\right)^2} \, dx dy = \sqrt{1 + f_x^2 + f_y^2} \, dx dy $$
+> 如果需要考虑曲面的朝向（对于通量积分），向量面积微元 $d\mathbf{S}$ 可以表示为：
+> $$ d\mathbf{S} = \mathbf{n} \, dS = \pm \left( -f_x \mathbf{i} - f_y \mathbf{j} + \mathbf{k} \right) \, dx dy $$
+> 其中 $\pm$ 号取决于选择哪个方向作为法向量的正向。如果 $\mathbf{n}$ 的 $\mathbf{k}$ 分量为正（向上），用 + 号；如果为负（向下），用 - 号。
+> 计算方式: $\Phi=z-f(x,y)$, $d\Phi=0,\to z'=1, f(x,y)=\partial\dots$
+
+
 
 *   $S^{+}$: 表示这是一个闭合曲面，并且我们考虑的是其外侧 ($^{+}$ 通常表示外侧法线方向)。
 *   $r = (x, y, z)$: 从原点 $(0,0,0)$ 到曲面上一点 $(x, y, z)$ 的位置向量。

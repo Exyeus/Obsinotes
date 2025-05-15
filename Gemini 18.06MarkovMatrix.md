@@ -1,3 +1,9 @@
+---
+sr-due: 2025-05-18
+sr-interval: 3
+sr-ease: 250
+---
+
 #review 
 
 >A property (kind of definition): The elements of a column must be added up to 1. Because probablity should be summed up to 1.
@@ -157,7 +163,7 @@ $T \mathbf{x}^* = \mathbf{x}^*$ 可以写成 $T \mathbf{x}^* = 1 \cdot \mathbf{x
 这个向量的元素和是 $5+1=6$。为了把它变成概率分布向量，我们需要归一化，让元素和为 1。
 $\mathbf{x}^* = \frac{1}{6} \begin{pmatrix} 5 \\ 1 \end{pmatrix} = \begin{pmatrix} 5/6 \\ 1/6 \end{pmatrix}$。
 
-所以，经过很长时间后，有 $5/6$ 的概率是晴天，有 $1/6$ 的概率是雨天。这就是这个天气系统的稳态分布。无论你从晴天开始 ($\begin{pmatrix} 1 \\ 0 \end{pmatrix}$)，雨天开始 ($\begin{pmatrix} 0 \\ 1 \end{pmatrix}$)，还是任何其他概率分布开始，天气分布都会最终趋向于 $\begin{pmatrix} 5/6 \\ 1/6 \end{pmatrix}$。
+所以，经过很长时间后，有 $5/6$ 的概率是晴天，有 $1/6$ 的概率是雨天。*这就是这个天气系统的稳态分布*。无论你从晴天开始 ($\begin{pmatrix} 1 \\ 0 \end{pmatrix}$)，雨天开始 ($\begin{pmatrix} 0 \\ 1 \end{pmatrix}$)，还是任何其他概率分布开始，天气分布都会最终趋向于 $\begin{pmatrix} 5/6 \\ 1/6 \end{pmatrix}$。
 
 **PageRank 应用简介：**
 Google 的 PageRank 算法是马尔可夫链的一个著名应用。想象互联网是一个巨大的有向图，网页是节点，链接是边。构建一个巨大的转移矩阵 $T$，其中 $T_{ij}$ 表示从网页 $j$ 随机跳转到网页 $i$ 的概率（这个概率考虑了网页的出链数和用户随机跳转到任意网页的可能性）。用户随机浏览网页的行为就可以建模为一个马尔可夫链。PageRank 就是这个转移矩阵对应的特征值 $\lambda=1$ 的特征向量！向量的每个分量代表对应网页的“重要性”或“排名”。具有较高 PageRank 值的网页更可能被随机漫游的用户访问到。这个稳态向量通过迭代计算 $T^k \mathbf{x}_0$（从一个初始排名分布开始）来近似求解，因为对于巨大的网络，直接解 $(T-I)\mathbf{x}=\mathbf{0}$ 可能计算量太大。

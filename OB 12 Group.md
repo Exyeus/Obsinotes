@@ -1,3 +1,9 @@
+---
+sr-due: 2025-05-18
+sr-interval: 3
+sr-ease: 250
+---
+
 #review 
 
 Part 1. Understanding current perspectives
@@ -29,12 +35,13 @@ Come toge'r to achieve certain goals.
 *Formal Groups*. Example: staff in a specific department.
 *Informal Groups*. Students work together for exams.
 
-#### Social Id'y The'y
+#### Social Id'y Theo'y
 
 Exp'in : why peo id'fy with particular groups;
 
 > [!important] 
-> Groups Id'ty sometimes should be avoid if ones out of the group exist
+> Groups Id'ty sometimes should be avoid,
+>  if ones out of the group exist
 
 #### Social Idty in Action
 
@@ -44,7 +51,7 @@ Exp'in : why peo id'fy with particular groups;
 > Some idties should be avoid, or selectively used, based on situations.
 > For emps: researcher? parent? Chinese? Foreigners?
 
-A person dev many idtise throughout life.
+A person dev many idties throughout life.
 
 #### Idties in Orgs
 
@@ -58,7 +65,7 @@ Strong Idef'n ->
 
 #### Ingroups vs. Outgroups
 
-categorize others as part of their group(ing') ir diff groups(out'g')
+categorize others as part of their group(ing') OR diff groups(out'g')
 
 > [!seealso] 
 > self-categorization theory
@@ -76,7 +83,7 @@ evolves from predictable patterns
 #### Punctuated Equilibrium
 1. First meeting sets groups' direction -- first *impression*. 
 	framewk, assptn
-	...
+	... For students' project teams, they usually, or should establish roles and timeline.
 
 2. First phase of inertia
 	follows initial direction
@@ -96,7 +103,7 @@ evolves from predictable patterns
 6. Final burst
 
 #### Alt'ive Model: Forming Storming Norming Performing
-
+![[Pasted image 20250515090354.png]]
 *The Four Stages*.
 
 1. start to form, polite, positive
@@ -107,15 +114,16 @@ evolves from predictable patterns
 
 special, and not exist without many persons.
 
-1. Role. A funct assumed by smone in a given posi'n
+#### Role. 
+A funct assumed by smone in a given posi'n
 	role percep'tn
 		Influenced by: family cowkers media past exp'ence
 	role expectatn
 		The leader should perform well.
 	role conflict.
 		*Types*:
-		- Interrole conflict
-		- Intrarole conflict
+		- Interrole conflict *work v.s.  family*
+		- Intrarole conflict *the same role, with conflicting exp'tatns*
 		*Managing Role Conflict*.
 			- prioritize roles
 			- set boundaries
@@ -128,12 +136,27 @@ special, and not exist without many persons.
 
 > [!seealso] 
 > The psychological contract and its violations
+> Unwritten agreement between employees and employers
+Establishes mutual expectations
+Management expected to:
+Treat employees fairly
+Provide acceptable working conditions
+Give feedback
+>
+Employees expected to:
+Demonstrate good attitude
+Follow directions
+Show loyalty
 
 #### Norms
 
 *acceptable standard of behavior* exerted on *ALL* members
 
-*？Emotions*
+*Norms and Emotions*.
+Norms can dictate emotiona; experiences, group members interpret shared emotions similarly.
+
+> [!example] 
+> Moral emotions influenced by group context -- perhaps moral norms?
 
 ##### Norms and Conformity
 

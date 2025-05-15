@@ -1,3 +1,9 @@
+---
+sr-due: 2025-05-18
+sr-interval: 3
+sr-ease: 250
+---
+
 #review 
 ### Key Ideas
 
@@ -7,7 +13,7 @@
 - Hamilton-Caylay: for a matrix A, $f_{A}(\lambda)|_{\lambda=A} =0_{n\times n}$.
 - A new viewpoint: *the subspace of eigenvectors for a eigenvalue*.
 - This kind of subspace works in analysing the diagonalizablity. k in $(\lambda-\lambda_{i})^{k}$ stands for the alge-repeated-times, while the *dimension* of a *subspace* for an e'val stands for the geo-repeated times.
-- Matrix is diagonalizable $\Leftrightarrow$ 1. $\lambda$'s are in proper *field*; 2. for every $\lambda$ , *alge* == *geo*.
+- Matrix is diagonalizable $\Leftrightarrow$ 1. $\lambda$'s are in proper number*field*; 2. for every $\lambda$ , *alge* == *geo*.
 
 ### 线性变换与矩阵的桥梁
 

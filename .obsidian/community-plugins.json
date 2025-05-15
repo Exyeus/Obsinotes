@@ -7,5 +7,7 @@
   "obsidian-latex-suite",
   "obsidian-linter",
   "obsidian-spaced-repetition",
-  "dataview"
+  "dataview",
+  "mermaid-tools",
+  "smart-connections"
 ]
