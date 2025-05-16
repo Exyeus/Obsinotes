@@ -1,6 +1,6 @@
-好的同学！格林公式 (Green's Theorem) 是多元微积分中一个极其重要的定理，它在二维平面上建立了一个**闭合曲线上的线积分**（第二类曲线积分）与该曲线所围**区域上的二重积分**之间的深刻联系。它是向量微积分基本定理（包括斯托克斯定理和散度定理）在二维平面上的体现，理解它有助于我们把握积分与微分之间的对偶关系。
+#review 
 
-让我们深入探讨格林公式的方方面面。
+好的同学！格林公式 (Green's Theorem) 是多元微积分中一个极其重要的定理，它在二维平面上建立了一个**闭合曲线上的线积分**（第二类曲线积分）与该曲线所围**区域上的二重积分**之间的深刻联系。它是向量微积分基本定理（包括斯托克斯定理和散度定理）在二维平面上的体现，理解它有助于我们把握积分与微分之间的对偶关系。
 
 ### 1. 引入与动机 (Hook & Motivation)
 
@@ -8,7 +8,7 @@
 
 1.  将闭合曲线 $C$ 参数化（可能需要分段）。
 2.  计算 $P, Q, dx, dy$ 的参数化形式。
-3.  代入公式 $\int_a^b [P(x(t), y(t)) x'(t) + Q(x(t), y(t)) y'(t)] dt$。
+3.  代入公式 $$\int_a^b [P(x(t), y(t)) x'(t) + Q(x(t), y(t)) y'(t)] dt$$
 4.  计算这个（可能很复杂的）定积分。
 
 对于复杂的曲线或复杂的 $P, Q$ 函数，这个过程可能非常繁琐。
@@ -17,7 +17,7 @@
 
 **为什么我们需要它？**
 
-1.  **简化计算:** 有时，计算区域 $D$ 上的二重积分比计算边界 $C$ 上的线积分更容易，反之亦然。格林公式提供了在这两者之间转换的桥梁。
+1.  **简化计算:** 有时，计算区域 $D$ 上的二重积分比计算边界 $C$ 上的线积分更容易，反之亦然。格林公式提供了在这两者之间转换的桥梁——*求过导之后，很有可能会更加简单！*。
 2.  **理论洞察:** 它揭示了函数（或向量场）在区域内部的某种“微分”性质（偏导数构成的量）如何决定了它在边界上的“积分”性质（线积分）。
 3.  **应用广泛:** 用于计算面积、判断向量场是否保守（路径无关）、流体力学中的环量计算等。
 4.  **基石作用:** 是理解更高维的斯托克斯定理和散度定理的基础。
@@ -25,7 +25,10 @@
 ### 2. 必要知识回顾 (Prerequisite Review)
 
 *   **第二类曲线积分:** $$\oint_C P dx + Q dy = \oint_C \mathbf{F} \cdot d\mathbf{r}$$，特别是沿着**闭合曲线 (Closed Curve)** 的积分，我们用 $\oint$ 符号表示。
-*   **曲线的正方向 (Positive Orientation):** 对于一个简单的闭合曲线 $C$（不自交），其正方向是**逆时针**方向。当你沿着这个方向走时，区域 $D$ 始终在你的**左手边**。
+
+> [!important] 
+> *   **曲线的正方向 (Positive Orientation):** 对于一个简单的闭合曲线 $C$（不自交），其正方向是**逆时针**方向。当你沿着这个方向走时，区域 $D$ 始终在你的**左手边**。
+
 *   **二重积分 (Double Integral):** $\iint_D f(x,y) dA$，计算一个函数在平面区域 $D$ 上的积分。$dA$ 是面积微元，$dA = dx dy$ 或 $dA = dy dx$。
 *   **偏导数 (Partial Derivatives):** $\frac{\partial Q}{\partial x}$ 和 $\frac{\partial P}{\partial y}$。需要 $P, Q$ 具有连续的一阶偏导数。
 *   **平面区域 (Planar Region):** $D$ 是由闭合曲线 $C$ 包围的有界区域。通常要求 $C$ 是分段光滑的简单闭合曲线。
@@ -50,7 +53,7 @@
 3.  **结论 (格林公式的本质):**
     所有内部小矩形的微观环流量（旋转）之和 $\sum (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) \Delta A$，在取极限后就变成了二重积分 $\iint_D (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) dA$。
     而这个总和，经过内部抵消后，又等于沿着外部大边界 $C$ 的总环流量 $\oint_C P dx + Q dy$。
-    所以，$\oint_C P dx + Q dy = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA$。
+    所以，$$\oint_C P dx + Q dy = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA$$
 
 **核心感觉：** 边界上的净流动（线积分）是由区域内部所有点的净旋转（二重积分）累积而成的。
 
@@ -73,18 +76,21 @@ $$ \oint_C P dx + Q dy = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\p
 **向量形式:**
 令 $\mathbf{F}(x,y) = \langle P(x,y), Q(x,y) \rangle$ 是一个二维向量场。我们可以将其视为三维向量场 $\mathbf{F} = \langle P, Q, 0 \rangle$。
 它的旋度 (Curl) 是：
-$$ \nabla \times \mathbf{F} = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ P & Q & 0 \end{vmatrix} = \mathbf{i}(0-0) - \mathbf{j}(0-0) + \mathbf{k}\left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) = \left\langle 0, 0, \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right\rangle $$
+$$ \nabla \times \mathbf{F} = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ P & Q & 0 \end{vmatrix} = \mathbf{i}(0-0) - \mathbf{j}(0-0) + \mathbf{k}\left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) $$$$= \left\langle 0, 0, \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right\rangle $$
 于是 $(\nabla \times \mathbf{F}) \cdot \mathbf{k} = \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}$，其中 $\mathbf{k} = \langle 0, 0, 1 \rangle$ 是 $z$ 轴方向的单位向量。
 格林公式的向量形式可以写为：
 $$ \oint_C \mathbf{F} \cdot d\mathbf{r} = \iint_D (\nabla \times \mathbf{F}) \cdot \mathbf{k} dA $$
 这表明：向量场 $\mathbf{F}$ 沿着边界 $C$ 的**环流量**等于其**旋度的 $z$ 分量**在区域 $D$ 上的**通量**（面积分）。这正是斯托克斯定理在二维平面的特例。
 
+>$\nabla \times F$ 旋度
+>$\nabla F$ 梯度 
+>$\nabla \cdot F$ 散度
 ### 5. 核心原理与推导过程 (Proof Idea for a Simple Region)
 
 为了理解“为什么”这个公式成立，我们通常先对简单形状的区域进行证明，然后推广到更一般的区域。我们分别证明以下两个等式，它们相加即可得到格林公式：
 
-1.  $\oint_C P dx = -\iint_D \frac{\partial P}{\partial y} dA$
-2.  $\oint_C Q dy = \iint_D \frac{\partial Q}{\partial x} dA$
+1.  $$\oint_C P dx = -\iint_D \frac{\partial P}{\partial y} dA$$
+2.  $$\oint_C Q dy = \iint_D \frac{\partial Q}{\partial x} dA$$
 
 **证明思路 (以第 1 个等式为例，假设 D 是 Type I 区域):**
 
@@ -106,7 +112,7 @@ $$ \oint_C \mathbf{F} \cdot d\mathbf{r} = \iint_D (\nabla \times \mathbf{F}) \cd
     *   $C_3, C_4$: (可能存在的) 左右垂直边界。在这些边界上，$x$ 是常数，所以 $dx = 0$。因此 $\int_{C_3} P dx = 0$ 和 $\int_{C_4} P dx = 0$。
     将各部分相加：
     $$ \oint_C P dx = \int_{C_1} P dx + \int_{C_2} P dx + \int_{C_3} P dx + \int_{C_4} P dx $$
-    $$ \oint_C P dx = \int_a^b P(t, g_1(t)) dt - \int_a^b P(t, g_2(t)) dt = \int_a^b [P(t, g_1(t)) - P(t, g_2(t))] dt \quad (**)$$
+    $$ \oint_C P dx = \int_a^b P(t, g_1(t)) dt - \int_a^b P(t, g_2(t)) dt $$$$= \int_a^b [P(t, g_1(t)) - P(t, g_2(t))] dt \quad (**)$$
 
 *   **比较结果:** 比较 $(*)$ 和 $(**)$，我们发现它们是相等的！所以 $\oint_C P dx = -\iint_D \frac{\partial P}{\partial y} dA$ 得证。
 
@@ -123,7 +129,7 @@ $$ \oint_C \mathbf{F} \cdot d\mathbf{r} = \iint_D (\nabla \times \mathbf{F}) \cd
     参数化 $C: x=\cos t, y=\sin t$, $0 \le t \le 2\pi$。
     $dx = -\sin t dt, dy = \cos t dt$。
     $P=-y=-\sin t, Q=x=\cos t$。
-    $\oint_C -y dx + x dy = \int_0^{2\pi} [(-\sin t)(-\sin t) + (\cos t)(\cos t)] dt = \int_0^{2\pi} (\sin^2 t + \cos^2 t) dt = \int_0^{2\pi} 1 dt = 2\pi$。
+    $$\oint_C -y dx + x dy = \int_0^{2\pi} [(-\sin t)(-\sin t) + (\cos t)(\cos t)] dt $$$$= \int_0^{2\pi} (\sin^2 t + \cos^2 t) dt = \int_0^{2\pi} 1 dt = 2\pi$$
 
 *   **方法二：使用格林公式**
     $P = -y \implies \frac{\partial P}{\partial y} = -1$。
@@ -134,7 +140,7 @@ $$ \oint_C \mathbf{F} \cdot d\mathbf{r} = \iint_D (\nabla \times \mathbf{F}) \cd
     **结果一致！** 在这个例子中，两种方法都可行，但二重积分可能更直接。
 
 **例 2: 利用格林公式简化计算**
-计算 $\oint_C (x^2y + \sin x) dx + (x^3 + \cos y) dy$，其中 $C$ 是边长为 2 的正方形，中心在原点，边平行于坐标轴，逆时针方向。
+计算 $$\oint_C (x^2y + \sin x) dx + (x^3 + \cos y) dy$$，其中 $C$ 是边长为 2 的<font color="#ffff00">正方形</font>，中心在原点，边平行于坐标轴，逆时针方向。
 
 *   **直接计算线积分:** 需要分四段参数化，代入复杂的函数，计算四个定积分，非常繁琐。
 *   **使用格林公式:**
@@ -166,7 +172,7 @@ $$\begin{align*} \text{Area} &= \frac{1}{2} \oint_C -y dx + x dy \\ &= \frac{1}{
 ### 7. 知识点总结与要点提炼 (Summary & Key Takeaways)
 
 *   **核心公式:** $\oint_C P dx + Q dy = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA$。
-*   **作用:** 连接闭合曲线上的**线积分**和其所围区域上的**二重积分**。
+*   **作用:** 连接<font color="#ffff00">闭合曲线</font>上的**线积分**和其所围区域上的**二重积分**。
 *   **条件:** $C$ 是分段光滑、简单闭合、**正向（逆时针）**曲线；$D$ 是 $C$ 所围区域；$P, Q$ 在 $D$ 上有一阶连续偏导数。
 *   **直观意义:** 区域内部微观旋转 ($\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}$) 的总和等于边界上的宏观环流 ($\oint_C \mathbf{F} \cdot d\mathbf{r}$)。
 *   **主要应用:**

@@ -1,10 +1,17 @@
+---
+sr-due: 2025-05-18
+sr-interval: 3
+sr-ease: 250
+---
+
 #review 
 
 >2 Dimension focus on tangent line, while 3 dimension focus on *vectors*, so as to describe those parameter expressions and planes, which have norm vectors.
 >
->Derivable and differentiable. The later one can be seen as favoritism for planes. It reveals the essence of incrementing in 2 directions: $df=Adx+Bdy+o(\sqrt{ x^{2}+y^{2} })$.
+>*Derivable and differentiable*. The later one can be seen as favoritism for planes. It reveals the essence of incrementing in 2 directions: $df=Adx+Bdy+o(\sqrt{ x^{2}+y^{2} })$.
 >
->In some problems, increments that can be separated into a few phases, lead to the eliminations onto some intermediate terms. We can restore those terms based on our observation and experience, so as to make some known facts useful, by fitting them to the structure of our formula.
+>In some problems, increments that can be separated into a few phases, lead to the eliminations onto some intermediate terms. 
+>We can restore those terms based on our observation and experience, so as to make some known facts useful, by *fitting and complement them to the structure of our formula*.
 >
 >These properties depict the escalation to some extent.
 
@@ -106,18 +113,22 @@
         3.  极限值等于函数值：$\lim_{x \to a} f(x) = f(a)$ (或 $\lim_{\mathbf{x} \to \mathbf{a}} f(\mathbf{x}) = f(\mathbf{a})$)。
 3.  **可导 (Differentiable - 1D):**
     *   函数 $f(x)$ 在点 $a$ 可导，如果极限 $f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}$ 存在。
-4.  **可微 (Differentiable - nD):** (这是与 1D 差异显著的地方)
-    *   函数 $f(\mathbf{x})$ 在点 $\mathbf{a}$ 可微，如果存在一个**向量**（称为 $f$ 在 $\mathbf{a}$ 的梯度，记作 $\nabla f(\mathbf{a})$ 或 $grad f(\mathbf{a})$），使得：
-        $$ \lim_{\mathbf{h} \to \mathbf{0}} \frac{f(\mathbf{a} + \mathbf{h}) - f(\mathbf{a}) - \nabla f(\mathbf{a}) \cdot \mathbf{h}}{\|\mathbf{h}\|} = 0 $$
-        其中 $\mathbf{h} = \mathbf{x} - \mathbf{a}$ 是一个向量，$\|\mathbf{h}\|$ 是它的长度，$\nabla f(\mathbf{a}) \cdot \mathbf{h}$ 是梯度向量与位移向量 $\mathbf{h}$ 的点积（数量积）。
-        *   **梯度是什么？** 如果 $f$ 可微，那么它的梯度向量由所有的一阶偏导数构成： $\nabla f(\mathbf{a}) = \left( \frac{\partial f}{\partial x_1}(\mathbf{a}), \frac{\partial f}{\partial x_2}(\mathbf{a}), ..., \frac{\partial f}{\partial x_n}(\mathbf{a}) \right)$。
-        *   **这个定义的含义是什么？** 它意味着函数在 $\mathbf{a}$ 点附近的变化量 $f(\mathbf{a} + \mathbf{h}) - f(\mathbf{a})$ 可以被一个线性函数（即 $\nabla f(\mathbf{a}) \cdot \mathbf{h}$）很好地近似。并且，这个近似的误差（分子中的 $f(\mathbf{a} + \mathbf{h}) - f(\mathbf{a}) - \nabla f(\mathbf{a}) \cdot \mathbf{h}$）比 $\|\mathbf{h}\|$ 更快地趋向于 0（这就是除以 $\|\mathbf{h}\|$ 后极限仍为 0 的意思）。这正是“存在切平面”的数学表达。
-5.  **偏导数存在 (Partial Derivatives Exist - nD):**
-    *   $\frac{\partial f}{\partial x_i}(\mathbf{a}) = \lim_{h \to 0} \frac{f(a_1, ..., a_i+h, ..., a_n) - f(a_1, ..., a_n)}{h}$ （如果极限存在）。
-6.  **$k$ 阶导数存在/连续:**
+
+> [!important] 
+> 1.  **可微 (Differentiable - nD):** (这是与 1D 差异显著的地方)
+>     *   函数 $f(\mathbf{x})$ 在点 $\mathbf{a}$ 可微，如果存在一个**向量**（称为 $f$ 在 $\mathbf{a}$ 的梯度，记作 $\nabla f(\mathbf{a})$ 或 $grad f(\mathbf{a})$），使得：
+>         $$ \lim_{\mathbf{h} \to \mathbf{0}} \frac{f(\mathbf{a} + \mathbf{h}) - f(\mathbf{a}) - \nabla f(\mathbf{a}) \cdot \mathbf{h}}{\|\mathbf{h}\|} = 0 $$
+>         其中 $\mathbf{h} = \mathbf{x} - \mathbf{a}$ 是一个向量，$\|\mathbf{h}\|$ 是它的长度，$\nabla f(\mathbf{a}) \cdot \mathbf{h}$ 是梯度向量与位移向量 $\mathbf{h}$ 的点积（数量积）。
+>         *   **梯度是什么？** 如果 $f$ 可微，那么它的梯度向量由所有的一阶偏导数构成： $\nabla f(\mathbf{a}) = \left( \frac{\partial f}{\partial x_1}(\mathbf{a}), \frac{\partial f}{\partial x_2}(\mathbf{a}), ..., \frac{\partial f}{\partial x_n}(\mathbf{a}) \right)$。
+>         *   **这个定义的含义是什么？** 它意味着函数在 $\mathbf{a}$ 点附近的变化量 $f(\mathbf{a} + \mathbf{h}) - f(\mathbf{a})$ 可以被一个线性函数（即 $\nabla f(\mathbf{a}) \cdot \mathbf{h}$）很好地近似。并且，这个近似的误差（分子中的 $f(\mathbf{a} + \mathbf{h}) - f(\mathbf{a}) - \nabla f(\mathbf{a}) \cdot \mathbf{h}$）比 $\|\mathbf{h}\|$ 更快地趋向于 0（这就是除以 $\|\mathbf{h}\|$ 后极限仍为 0 的意思）。这正是“存在切平面”的数学表达。
+>看待梯度的新视角！空间之中的切向量——有别于平面之中的切平面。
+
+1.  **偏导数存在 (Partial Derivatives Exist - nD):**
+    *   $$\frac{\partial f}{\partial x_i}(\mathbf{a}) = \lim_{h \to 0} \frac{f(a_1, ..., a_i+h, ..., a_n) - f(a_1, ..., a_n)}{h}$$ （如果极限存在）。
+2.  **$k$ 阶导数存在/连续:**
     *   **1D:** $f''(x)$ 存在意味着 $f'(x)$ 可导。$f \in C^1(I)$ 表示 $f$ 在区间 $I$ 上可导，且 $f'(x)$ 在 $I$ 上连续。$f \in C^k(I)$ 表示 $f$ 在 $I$ 上 $k$ 次可导，且 $k$ 阶导数 $f^{(k)}(x)$ 在 $I$ 上连续。
     *   **nD:** $f \in C^1(D)$ 表示 $f$ 在区域 $D$ 内所有的**一阶偏导数**都存在且**连续**。$f \in C^k(D)$ 表示 $f$ 在区域 $D$ 内所有的直到 $k$ 阶的**偏导数**都存在且**连续**。
-7.  **可积 (Integrable - Riemann):**
+3.  **可积 (Integrable - Riemann):**
     *   **1D:** $f(x)$ 在 $[a, b]$ 上黎曼可积，如果通过构造分割、取样点、求和、取极限得到的黎曼和 $\lim_{n \to \infty} \sum_{i=1}^n f(\xi_i) \Delta x_i$ 存在且唯一。
     *   **nD:** 类似地，通过对区域 $D$ 进行分割（比如分成小矩形或小方块），在每个小块内取样点 $\xi_i$，计算 $f(\xi_i)$ 乘以小块的面积（或体积） $\Delta A_i$（或 $\Delta V_i$），然后求和并取极限。如果极限 $\iint_D f(x,y) dA$ 或 $\iiint_V f(x,y,z) dV$ 存在且唯一，则称 $f$ 在 $D$ 或 $V$ 上可积。
 

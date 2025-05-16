@@ -1,3 +1,9 @@
+---
+sr-due: 2025-05-19
+sr-interval: 4
+sr-ease: 270
+---
+
 #review 
 
 > $\mathbf{k}$ is component in the same type to $\mathbf{i}$ and $\mathbf{j}$. We just use 1 to repr it.

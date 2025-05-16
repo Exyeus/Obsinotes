@@ -1,3 +1,9 @@
+---
+sr-due: 2025-05-16
+sr-interval: 1
+sr-ease: 230
+---
+
 #review 
 
 
@@ -312,7 +318,7 @@ $$ \oint_C P \mathbf{k} \cdot d\mathbf{r} = \iint_S (\nabla \times (P \mathbf{k}
     *   **思想：** 计算旋度，确定向量面积微元，计算点积，将曲面积分转化为投影区域上的二重积分。
 
 3.  **利用 Green 定理连接：**
-    *   我们现在需要证明线积分的结果 $\oint_{C'} P(x, y, f) (f_x dx + f_y dy)$ 等于二重积分的结果 $\iint_R (-P_2(x, y, f) f_x + P_1(x, y, f) f_y) dx dy$.
+    *   我们现在需要证明线积分的结果 $$\oint_{C'} P(x, y, f) (f_x dx + f_y dy)$$ 等于二重积分的结果 $\iint_R (-P_2(x, y, f) f_x + P_1(x, y, f) f_y) dx dy$.
     *   将线积分写成 Green 定理的标准形式 $\oint_{C'} U dx + V dy$，其中 $U = P(x, y, f) f_x$ 且 $V = P(x, y, f) f_y$.
     *   根据 Green 定理，这个线积分等于 $\iint_R (\frac{\partial V}{\partial x} - \frac{\partial U}{\partial y}) dx dy$.
     *   现在计算 $\frac{\partial V}{\partial x}$ 和 $\frac{\partial U}{\partial y}$。注意，这里的求导是对 $x, y$ 求偏导，要用到链式法则，因为 $P$ 和 $f$ 都是 $x, y$ 的函数（$P$ 通过 $f$ 间接依赖于 $x, y$）：
@@ -361,7 +367,7 @@ $$ \oint_C P \mathbf{k} \cdot d\mathbf{r} = \iint_S (\nabla \times (P \mathbf{k}
 
 我们之前在二维平面上也问过类似的问题：如果向量场 $\mathbf{F} = M \mathbf{i} + N \mathbf{j}$ 满足 $\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} = 0$ (即二维旋度为零)，那么 $\mathbf{F}$ 是否一定是梯度场（保守场，即存在 $f$ 使得 $\mathbf{F} = \nabla f$）？在二维情况下，我们知道如果区域 $D$ 是**单连通的**（没有“洞”），那么答案是肯定的。但如果区域有洞（比如环形区域），结论就不一定成立了。二维的例子是 $\mathbf{F} = \frac{-y}{x^2+y^2} \mathbf{i} + \frac{x}{x^2+y^2} \mathbf{j}$，在原点之外它的二维旋度为零，但在包含原点的环形区域内，沿绕原点的闭合曲线积分不为零 ($2\pi$)，所以它不是保守场。
 
-现在我们在三维空间，利用斯托克斯定理来探讨类似的问题：如果向量场 $\mathbf{F}$ 满足 $\nabla \times \mathbf{F} = \mathbf{0}$ (无旋场)，那么 $\mathbf{F}$ 是否一定是梯度场 $\nabla f$ (保守场)？根据斯托克斯定理，如果 $\nabla \times \mathbf{F} = \mathbf{0}$，那么对于**任何**闭合曲线 $C$，如果 $C$ 能围成一个**两面可定向**的曲面 $S$ **完全位于向量场定义域 $D$ 内**，并且 $C$ 是 $S$ 的边界，那么 $\oint_C \mathbf{F} \cdot d\mathbf{r} = \iint_S (\nabla \times \mathbf{F}) \cdot d\mathbf{S} = \iint_S \mathbf{0} \cdot d\mathbf{S} = 0$. 如果对于域 $D$ 内的**所有**闭合曲线，$ \oint_C \mathbf{F} \cdot d\mathbf{r} = 0$，那么 $\mathbf{F}$ 就是保守场，也就是梯度场。
+现在我们在三维空间，利用斯托克斯定理来探讨类似的问题：如果向量场 $\mathbf{F}$ 满足 $\nabla \times \mathbf{F} = \mathbf{0}$ (无旋场)，那么 $\mathbf{F}$ 是否一定是梯度场 $\nabla f$ (保守场)？根据斯托克斯定理，如果 $\nabla \times \mathbf{F} = \mathbf{0}$，那么对于**任何**闭合曲线 $C$，如果 $C$ 能围成一个**两面可定向**的曲面 $S$ **完全位于向量场定义域 $D$ 内**，并且 $C$ 是 $S$ 的边界，那么 $\oint_C \mathbf{F} \cdot d\mathbf{r} = \iint_S (\nabla \times \mathbf{F}) \cdot d\mathbf{S} = \iint_S \mathbf{0} \cdot d\mathbf{S} = 0$. 如果对于域 $D$ 内的**所有**闭合曲线，$$ \oint_C \mathbf{F} \cdot d\mathbf{r} = 0$$，那么 $\mathbf{F}$ 就是保守场，也就是梯度场。
 
 问题来了：在三维空间中，一个闭合曲线 $C$ 是否总是能围成一个完全位于域 $D$ 内的两面可定向曲面 $S$？这取决于曲线 $C$ 本身的形状（是否打结）以及域 $D$ 的形状（是否有“洞”）。这把我们带入了拓扑学的范畴。
 
@@ -461,13 +467,13 @@ $$ \oint_C P \mathbf{k} \cdot d\mathbf{r} = \iint_S (\nabla \times (P \mathbf{k}
 *   **高斯-库仑定律 (Gauss-Coulomb Law):** 描述静电场 $\mathbf{E}$ 与电荷分布 $\rho$ 的关系。
     *   **微分形式 (8):** $\nabla \cdot \mathbf{E} = 4\pi \rho$. (电场的散度与电荷密度成正比)。这描述了电场在有电荷的地方如何“发散”。
     *   **积分形式 (8'):** $\iint_S \mathbf{E} \cdot d\mathbf{S} = 4\pi Q$. (穿过任意封闭曲面 $S$ 的电场总通量，与其内部包含的总净电荷 $Q$ 成正比)。$Q = \iiint_D \rho dV$。这描述了电荷对电场通量的整体贡献。
-    *   **等价性证明：** 微分形式 $\Rightarrow$ 积分形式：对微分形式在区域 $D$（由 $S$ 包围）上积分 $\iiint_D \nabla \cdot \mathbf{E} dV = \iiint_D 4\pi \rho dV$. 利用**散度定理**左边变为 $\iint_S \mathbf{E} \cdot d\mathbf{S}$。右边 $\iiint_D 4\pi \rho dV = 4\pi \iiint_D \rho dV = 4\pi Q$. 得证 $\iint_S \mathbf{E} \cdot d\mathbf{S} = 4\pi Q$.
-    *   积分形式 $\Rightarrow$ 微分形式：使用反证法，假设微分形式在某点不成立，例如 $\nabla \cdot \mathbf{E} - 4\pi \rho > 0$ 在 $P_0$ 点。由于连续性，在一个包含 $P_0$ 的小球 $B_0$ 内该量也大于 0。对这个小球的边界 $S_0$ 应用积分形式， $\iint_{S_0} \mathbf{E} \cdot d\mathbf{S} = 4\pi Q_0$。同时对 $B_0$ 应用散度定理， $\iint_{S_0} \mathbf{E} \cdot d\mathbf{S} = \iiint_{B_0} \nabla \cdot \mathbf{E} dV$. 所以 $\iiint_{B_0} \nabla \cdot \mathbf{E} dV = 4\pi Q_0 = 4\pi \iiint_{B_0} \rho dV$. 即 $\iiint_{B_0} (\nabla \cdot \mathbf{E} - 4\pi \rho) dV = 0$. 但我们假设被积函数大于 0，所以积分应该大于 0，矛盾。故微分形式必须成立。
+    *   **等价性证明：** 微分形式 $\Rightarrow$ 积分形式：对微分形式在区域 $D$（由 $S$ 包围）上积分 $$\iiint_D \nabla \cdot \mathbf{E} dV = \iiint_D 4\pi \rho dV$$. 利用**散度定理**左边变为 $\iint_S \mathbf{E} \cdot d\mathbf{S}$。右边 $$\iiint_D 4\pi \rho dV = 4\pi \iiint_D \rho dV = 4\pi Q$$. 得证 $\iint_S \mathbf{E} \cdot d\mathbf{S} = 4\pi Q$.
+    *   积分形式 $\Rightarrow$ 微分形式：使用反证法，假设微分形式在某点不成立，例如 $\nabla \cdot \mathbf{E} - 4\pi \rho > 0$ 在 $P_0$ 点。由于连续性，在一个包含 $P_0$ 的小球 $B_0$ 内该量也大于 0。对这个小球的边界 $S_0$ 应用积分形式， $\iint_{S_0} \mathbf{E} \cdot d\mathbf{S} = 4\pi Q_0$。同时对 $B_0$ 应用散度定理， $$\iint_{S_0} \mathbf{E} \cdot d\mathbf{S} = \iiint_{B_0} \nabla \cdot \mathbf{E} dV$$. 所以 $\iiint_{B_0} \nabla \cdot \mathbf{E} dV = 4\pi Q_0 = 4\pi \iiint_{B_0} \rho dV$. 即 $\iiint_{B_0} (\nabla \cdot \mathbf{E} - 4\pi \rho) dV = 0$. 但我们假设被积函数大于 0，所以积分应该大于 0，矛盾。故微分形式必须成立。
 
 *   **法拉第电磁感应定律 (Faraday's Law):** 描述变化的磁场 $\mathbf{B}$ 如何产生电场 $\mathbf{E}$。
     *   **微分形式 (9):** $\nabla \times \mathbf{E} = -\frac{1}{c} \frac{\partial \mathbf{B}}{\partial t}$. (电场的旋度与磁场随时间的变化率成正比)。这描述了变化的磁场如何在空间中产生“涡旋”电场。
     *   **积分形式 (9'):** $\oint_C \mathbf{E} \cdot d\mathbf{r} = -\frac{1}{c} \frac{d}{dt} \iint_S \mathbf{B} \cdot d\mathbf{S}$. (沿任意闭合回路 $C$ 的电场线积分（电动势），等于穿过该回路所围任意曲面 $S$ 的磁通量随时间的变化率的负值)。
-    *   **等价性证明：** 微分形式 $\Rightarrow$ 积分形式：考虑回路 $C$ 和其所围曲面 $S$，应用**斯托克斯定理** $\oint_C \mathbf{E} \cdot d\mathbf{r} = \iint_S (\nabla \times \mathbf{E}) \cdot d\mathbf{S}$. 将微分形式代入右边 $\iint_S (-\frac{1}{c} \frac{\partial \mathbf{B}}{\partial t}) \cdot d\mathbf{S} = -\frac{1}{c} \iint_S \frac{\partial \mathbf{B}}{\partial t} \cdot d\mathbf{S}$. 在一定条件下，积分和求导次序可以交换：$-\frac{1}{c} \frac{d}{dt} \iint_S \mathbf{B} \cdot d\mathbf{S}$. 得证。
+    *   **等价性证明：** 微分形式 $\Rightarrow$ 积分形式：考虑回路 $C$ 和其所围曲面 $S$，应用**斯托克斯定理** $\oint_C \mathbf{E} \cdot d\mathbf{r} = \iint_S (\nabla \times \mathbf{E}) \cdot d\mathbf{S}$. 将微分形式代入右边 $$\iint_S (-\frac{1}{c} \frac{\partial \mathbf{B}}{\partial t}) \cdot d\mathbf{S} = -\frac{1}{c} \iint_S \frac{\partial \mathbf{B}}{\partial t} \cdot d\mathbf{S}$$. 在一定条件下，积分和求导次序可以交换：$-\frac{1}{c} \frac{d}{dt} \iint_S \mathbf{B} \cdot d\mathbf{S}$. 得证。
     *   积分形式 $\Rightarrow$ 微分形式：使用反证法，假设微分形式在某点不成立，例如 $(\nabla \times \mathbf{E} + \frac{1}{c} \frac{\partial \mathbf{B}}{\partial t})$ 在 $P_0$ 的某个分量大于 0。在一个包含 $P_0$ 的小圆盘 $S_0$ 上（法向量与该分量方向一致），这个点积分量大于 0。对 $S_0$ 的边界 $C_0$ 应用积分形式， $\oint_{C_0} \mathbf{E} \cdot d\mathbf{r} = -\frac{1}{c} \frac{d}{dt} \iint_{S_0} \mathbf{B} \cdot d\mathbf{S}$. 同时对 $S_0$ 应用斯托克斯定理 $\oint_{C_0} \mathbf{E} \cdot d\mathbf{r} = \iint_{S_0} (\nabla \times \mathbf{E}) \cdot d\mathbf{S}$. 所以 $\iint_{S_0} (\nabla \times \mathbf{E}) \cdot d\mathbf{S} = -\frac{1}{c} \frac{d}{dt} \iint_{S_0} \mathbf{B} \cdot d\mathbf{S}$. 交换右边导数和积分次序，得到 $\iint_{S_0} (\nabla \times \mathbf{E} + \frac{1}{c} \frac{\partial \mathbf{B}}{\partial t}) \cdot d\mathbf{S} = 0$. 但我们假设被积向量的点积大于 0，所以积分应该大于 0，矛盾。故微分形式必须成立。
 
 *   **静电势函数的调和性：** 在无电荷区域 ($\rho=0$)，高斯定律的微分形式是 $\nabla \cdot \mathbf{E} = 0$。在静电场中（磁场不随时间变化），法拉第定律的微分形式是 $\nabla \times \mathbf{E} = \mathbf{0}$。无旋场在单连通区域是保守场，所以存在势函数 $\phi$ 使 $\mathbf{E} = \nabla \phi$ (物理上常用负梯度 $\mathbf{E} = -\nabla \phi$)。将 $\mathbf{E} = \nabla \phi$ 代入 $\nabla \cdot \mathbf{E} = 0$，得到 $\nabla \cdot (\nabla \phi) = 0$，即 $\nabla^2 \phi = 0$. 这表明静电势函数在无电荷区域是**调和函数**（满足拉普拉斯方程的函数）。

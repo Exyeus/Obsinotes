@@ -135,9 +135,9 @@ print(x.shape)  # 输出: torch.Size([2, 3, 4])
         - 对于矩阵乘法 `A.mm(B)`，如果 A 是一个 m×n 的矩阵， B 是一个 n×k 的矩阵，那么结果是一个 m×k 的矩阵。中间的维度 n 必须匹配。 [39]
     - **索引和切片：** 与 Numpy `ndarray` 类似，可以使用方括号 `[]` 进行索引和切片。 [47]
         
-        Python
         
-        ```
+        
+        ```Python
         x = torch.randn(2, 3)
         first_row = x[0, :]    # 获取第一行
         first_col = x[:, 0]    # 获取第一列
@@ -154,7 +154,7 @@ b = a.view(1, 6) # b 的 shape 是 (1, 6)，共享 a 的数据
 # b 会是 tensor([[1., 2., 3., 4., 5., 6.]])
 ```
 .
-        - `reshape()`: 也可以改变形状，如果可能，它会返回一个视图（共享数据），否则会复制数据。
+        - `reshape()`: 也可以改变形状，如果可能，它会返回一个*视图*（共享数据），否则会复制数据。
         - `squeeze()`: 移除所有大小为 1 的维度。 [47]
         - `unsqueeze(dim)`: 在指定维度 `dim` 插入一个大小为 1 的新维度。
     - **与其他库的转换：**
@@ -255,15 +255,12 @@ if torch.cuda.is_available():
 
 - 回顾链式法则：
     
-    假设你有一个复合函数。例如，z 是 y 的函数 (z=f(y))，而 y 又是 x 的函数 (y=g(x))。那么 z 也是 x 的函数 (z=f(g(x)))。链式法则告诉我们如何计算 z 相对于 x 的导数：
-    
-    $$\frac{dx}{dz}​=\frac{dy}{dz}​⋅\frac{dx}{dy}$$​
-    
+    假设你有一个复合函数。例如，z 是 y 的函数 (z=f(y))，而 y 又是 x 的函数 (y=g(x))。那么 z 也是 x 的函数 (z=f(g(x)))。链式法则告诉我们如何计算 z 相对于 x 的导数：$$\frac{dx}{dz}​=\frac{dy}{dz}​⋅\frac{dx}{dy}$$​
     简单来说，就是“外层导数乘以内层导数”。
     
-    对于更复杂的嵌套，比如 y=f(u), u=g(v), v=h(x)，那么：
+    对于更复杂的嵌套，比如 $y=f(u), u=g(v), v=h(x)$，那么：
     
-    dxdy​=dudy​⋅dvdu​⋅dxdv​
+    $dxdy​=dudy​⋅dvdu​⋅dxdv​$
     
 - Autograd 如何应用链式法则：
     
@@ -508,7 +505,7 @@ print(f"Gradient for b: {b.grad}")
     
 2. 计算图作为核心表示 (Computational Graphs as a Core Representation)：
     
-    无论是 TensorFlow、PyTorch 还是其他深度学习框架，计算图都是一个核心概念。它不仅是组织运算的方式，也是实现自动微分的基础。PyTorch 的动态计算图尤其强大，它允许图的结构在运行时根据输入数据或控制流（如循环和条件判断）发生变化。这为处理复杂和动态的模型（如自然语言处理中的递归网络或图神经网络）提供了极大的灵活性。思考一下，这种“在运行时定义计算”的范式与传统的静态编译语言有什么异同？
+    无论是 TensorFlow、PyTorch 还是其他深度学习框架，计算图都是一个核心概念。它不仅是组织运算的方式，也是实现自动微分的基础。<font color="#ffff00">PyTorch 的动态计算图尤其强大，它允许图的结构在运行时根据输入数据或控制流（如循环和条件判断）发生变化。这为处理复杂和动态的模型（如自然语言处理中的递归网络或图神经网络）提供了极大的灵活性</font>。思考一下，这种“在运行时定义计算”的范式与传统的静态编译语言有什么异同？
     
 3. 声明式 vs. 命令式编程的融合：
     
@@ -520,7 +517,7 @@ print(f"Gradient for b: {b.grad}")
     
 5. 从“轮子”到“造轮子”的平滑过渡：
     
-    PyTorch 提供了大量预定义的层 (layers)、激活函数 (activation functions)、损失函数 (loss functions) 和优化器 (optimizers)。但同时，由于其灵活性和与 Python 的紧密集成，如果你想实现自定义的层或损失函数，甚至自定义 autograd.Function 来定义新的可微操作（并提供其前向和反向传播的精确实现），PyTorch 也提供了清晰的接口。这使得从使用现成组件到深入底层定制的过渡非常自然。
+    PyTorch 提供了大量预定义的层 (layers)、激活函数 (activation functions)、损失函数 (loss functions) 和优化器 (optimizers)。但同时，由于其灵活性和与 Python 的紧密集成，<font color="#ffff00">如果你想实现自定义的层或损失函数，甚至自定义 autograd.Function 来定义新的可微操作（并提供其前向和反向传播的精确实现），PyTorch 也提供了清晰的接口。这使得从使用现成组件到深入底层定制的过渡非常自然</font>。
     
 
 **启发性问题：**

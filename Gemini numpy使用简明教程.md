@@ -1,3 +1,9 @@
+---
+sr-due: 2025-05-18
+sr-interval: 3
+sr-ease: 250
+---
+
 #review 
 
 >Core Ideas:
@@ -454,7 +460,7 @@ A的逆矩阵:
      [1 2]]
     ```
     **细节：** `hstack` 对于一维数组是直接拼接，对于二维数组是按列拼接。如果想将两个一维数组按列拼成二维数组，常用 `np.column_stack` 或先 `reshape` 成列向量再 `hstack`。
-
+[[Gemini NumpyVstackAndHstack]]
 ### 11. 使用场景样例：模拟线性回归预测
 
 假设我们有一个简单的一元线性回归模型 $y = w x + b$，我们用 Numpy 来生成数据并进行预测。

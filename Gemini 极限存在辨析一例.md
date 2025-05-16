@@ -1,9 +1,15 @@
+---
+sr-due: 2025-05-18
+sr-interval: 3
+sr-ease: 250
+---
+
 #review 
 
 >Pay attention to the structure of these functions.
 >In this problem, if $x=y$ , then it will be $x^{2}y^{2} / x^{2}y^{2}\implies 1$.
 >Also, notice the substitution: $(x,y)\to (\rho, \theta)$
->If the result is not dependent on $\theta$, then the limitation is fixed, and exists. 
+>If the result is not dependent on $\theta$, then the limitation is fixed, and therefore, exists. 
 
 $$f(x,y)=\frac{x^{2} y^{2}}{x^{2} y^{2} +(x-y)^{2} } $$
 分析该函数在 $(0,0)$ 的两种不同顺序的累次极限的存在性，以及其整体极限的存在性。使用不止一种方法。
@@ -53,7 +59,7 @@ $$f(x,y)=\frac{x^{2} y^{2}}{x^{2} y^{2} +(x-y)^{2} }$$
 ### 3. 直观解释与感性认识 (Intuitive Explanation)
 
 让我们先“感觉”一下这个函数 $f(x,y)=\frac{x^{2} y^{2}}{x^{2} y^{2} +(x-y)^{2} }$ 在 $(0,0)$ 附近可能是什么样子。
-
+![[Pasted image 20250515213257.png]]
 *   **分子 $x^2 y^2$：** 当 $x$ 或 $y$ 靠近 0 时，这个值会非常快地变成一个很小的正数（或 0）。它是 $x^2$ 和 $y^2$ 的乘积，意味着只要 $x$ 或 $y$ 中有一个是 0，分子就是 0。
 *   **分母 $x^2 y^2 + (x-y)^2$：** 这是两项之和。第一项 $x^2 y^2$ 和分子一样。第二项 $(x-y)^2$ 度量了 $x$ 和 $y$ 之间的差异的平方。这一项也是非负的。
 *   **整体结构：** $f(x,y) = \frac{A}{A+B}$，其中 $A = x^2 y^2 \ge 0$ 且 $B = (x-y)^2 \ge 0$。
