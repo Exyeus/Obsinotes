@@ -23,6 +23,7 @@ AIPython 15 Midterm test
 [[AIPython Project2Regression]]
 [[AIPython 22IntroductionToPytorch]]
 [[AIPython 23PytorchApplication]]
+[[AIPython 24PytorchII]]
 
 [[Gemini AutoGrad]]
 [[Gemini VectorsInAI]]
