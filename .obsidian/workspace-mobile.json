@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "ae9b7f906e1383db",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Gemini 高等代数II 最小多项式若当标准型.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -97,7 +110,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "OB 12 Group.md",
+            "file": "Gemini 高等代数II 最小多项式若当标准型.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -114,7 +127,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "OB 12 Group.md",
+            "file": "Gemini 高等代数II 最小多项式若当标准型.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -126,7 +139,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "OB 12 Group.md"
+            "file": "Gemini 高等代数II 最小多项式若当标准型.md"
           }
         }
       },
@@ -153,12 +166,21 @@
           "type": "git-view",
           "state": {}
         }
+      },
+      {
+        "id": "b6d26bd598611a91",
+        "type": "leaf",
+        "state": {
+          "type": "mermaid-toolbar-view",
+          "state": {}
+        }
       }
     ],
-    "currentTab": 4
+    "currentTab": 6
   },
   "left-ribbon": {
     "hiddenItems": {
+      "mermaid-tools:Open Mermaid Toolbar": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -168,15 +190,19 @@
       "random-note:开始漫游笔记": false,
       "audio-recorder:开始/结束录音": false,
       "workspaces:管理工作区布局": false,
-      "obsidian-spaced-repetition:复习卡片": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-spaced-repetition:复习卡片": false
     }
   },
-  "active": "2dc5058b137c8baa",
+  "active": "ae9b7f906e1383db",
   "lastOpenFiles": [
+    "高等代数II.md",
+    "Gemini 高等代数II 最小多项式若当标准型.md",
+    "AIPython 24PytorchII.md",
+    "AI导论.md",
+    "太极拳细节 20250515.md",
+    "OB 12 Group.md",
     "CS61B L9 Interface,Inheritance.md",
     "高等代数 II 18 线性空间.md",
-    "OB 12 Group.md",
     "OB 25Spring.md",
     "OB7 Stress.md",
     "传习录导读 第十、十二课.md",
@@ -196,11 +222,6 @@
     "Gemini 算子.md",
     "Gemini 积分变换技巧.md",
     "Gemini 曲线积分与曲面积分细节.md",
-    "Gemini 参数方程与多元函数微分学几何应用.md",
-    "Gemini numpy使用简明教程.md",
-    "Gemini VectorsInAI.md",
-    "Gemini Sol 24 Midterm.md",
-    "Gemini Sol 23 Midterm.md",
-    "Gemini Sol 22 Midterm.md"
+    "Gemini 参数方程与多元函数微分学几何应用.md"
   ]
 }
