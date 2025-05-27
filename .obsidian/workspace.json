@@ -8,49 +8,90 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e2c9a58ffe0f78fb",
+            "id": "ad5560547e408a6b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Gemini 高斯公式一例.md",
+                "file": "Gemini AIPythonProject4Analysis.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Gemini 高斯公式一例"
+              "title": "Gemini AIPythonProject4Analysis"
             }
           },
           {
-            "id": "87296201ba70cbe1",
+            "id": "e9c1708ebe86456d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AIPython 23PytorchApplication.md",
+                "file": "ChatWithGemini.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AIPython 23PytorchApplication"
+              "title": "ChatWithGemini"
             }
           },
           {
-            "id": "ca063956a16fee8e",
+            "id": "cda9436bef73dd05",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "高等数学II.md",
+                "file": "Gemini AIPython TrainingPytorchNeuralNetwork.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "高等数学II"
+              "title": "Gemini AIPython TrainingPytorchNeuralNetwork"
+            }
+          },
+          {
+            "id": "82715088441f61bb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Gemma Prompt Gen.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Gemma Prompt Gen"
+            }
+          },
+          {
+            "id": "6da71ea53ee85527",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "感受野.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "感受野"
+            }
+          },
+          {
+            "id": "2a4b0ea6c39af5d1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ReferenceCompletion.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ReferenceCompletion"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +123,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "mathbf{k}",
+                "query": "intrinsic",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -125,7 +166,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Gemini_search_HKNovalty.md",
+                "file": "TOPE B Intro.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +176,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Gemini_search_HKNovalty 的反向链接列表"
+              "title": "TOPE B Intro 的反向链接列表"
             }
           },
           {
@@ -222,16 +263,27 @@
             "state": {
               "type": "smart-connections-view",
               "state": {},
-              "icon": "smart-connections",
-              "title": "Smart Connections"
+              "icon": "lucide-file",
+              "title": "插件不再活动"
+            }
+          },
+          {
+            "id": "80813fee9e648a6a",
+            "type": "leaf",
+            "state": {
+              "type": "smart-chat-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "插件不再活动"
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 370.5
+    "width": 390.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -250,45 +302,45 @@
       "smart-connections:Open: Smart Chat Conversation": false
     }
   },
-  "active": "87296201ba70cbe1",
+  "active": "ad5560547e408a6b",
   "lastOpenFiles": [
-    "AIPython 22IntroductionToPytorch.md",
-    "高等代数II 5 多项式函数与综合除法.md",
-    "Gemini numpy使用简明教程.md",
-    "Gemini NumpyVstackAndHstack.md",
-    "Gemini SingleValueLinearRegression.md",
-    "Gemini VectorsInAI.md",
-    "Gemini 18.02FinalChapters.md",
-    "Gemini 函数微分学性质大赏.md",
-    "Gemini 变上限定积分复习.md",
-    "Gemini 曲面积分法向量推导.md",
-    "Gemini 极限存在辨析一例.md",
-    "Pasted image 20250515213257.png",
-    "Gemini 高斯公式一例.md",
-    "Gemini 格林公式.md",
-    "高等数学II.md",
-    "柴特基比提博士/CodingNote/YOJ_TREE.md",
-    "Gemini_search_HKNovalty.md",
-    "大一下区块链.md",
-    "Metaso_立体角.md",
-    "CS61B L9 Interface,Inheritance.md",
-    "高等代数II 6 复实有理系数多项式.md",
+    "AI导论.md",
+    "Gemini AIPythonProject4Analysis.md",
+    "GEMINI Teacher Prompt.md",
+    "Gemini AIPython TrainingPytorchNeuralNetwork.md",
+    "Gemma Prompt Gen.md",
+    "AIPython 27ConfigConvAndTrain.md",
+    "Pasted image 20250526143520.png",
+    "非线性激活.md",
+    "感受野.md",
+    "神经元.md",
+    "Pasted image 20250526141304.png",
+    "Pasted image 20250526141043.png",
+    "TOPE B Intro.md",
+    "ReferenceCompletion.md",
+    "OB 25Spring.md",
     "OB 12 Group.md",
+    "AVLS.md",
+    "Gemini 离散数学 从关系到格.md",
+    "ChatWithGemini.md",
+    "ChatWithMetaso.md",
+    "DefinitionOfMood.md",
+    "OB Final Essay.md",
+    "AnalysisResource.md",
+    "Pasted image 20250522220304.png",
+    "OB 2 Models, Theories and Levels.md",
+    "离散数学.md",
+    "Gemini YOJ 1385 ChineseRemainder.md",
+    "柴特基比提博士/CodingNote/YOJ_TREE.md",
+    "AIPython 26ImagesAndConvolution.md",
+    "Pasted image 20250522165429.png",
+    "Pasted image 20250522162034.png",
+    "OB 13.md",
+    "Pasted image 20250521232819.png",
+    "Pasted image 20250515213257.png",
     "Pasted image 20250515090354.png",
-    "OB 3 Personality and its application.md",
-    "Gemini 18.06MarkovMatrix.md",
-    "Gemini CS70 Note4 StableMatching.md",
-    "Gemini 高等代数II 特征值与对角化.md",
-    "高等代数 II 18 线性空间.md",
     "yoj1365.cpp",
     "Pasted image 20250512203751.png",
-    "Pasted image 20250512203334.png",
-    "Pasted image 20250512152648.png",
-    "Pasted image 20250512152633.png",
-    "Pasted image 20250512152548.png",
-    "Pasted image 20250505191119.png",
-    "Pasted image 20250505191113.png",
-    "Pasted image 20250416223242.png",
     "离散数学",
     "ch6_1多元函数微分学.pdf.pdf",
     "ch6_2多元函数的极限.pdf",

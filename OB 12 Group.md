@@ -9,7 +9,7 @@ sr-ease: 250
 Part 1. Understanding current perspectives
 	What to do with so-called 'culture'? There are cultural differences...But I think Internet has brought mergement in cultures, because...exaps...*This is the logic*.
 Part 2. 
-	Critique current perspectives. No true genius of 100% accuracy. Debug in those slides, if you find some mistakes. Notably, maybe not completely wrong, but *not quite suitable for current situations with lots of changes happened*. e.g. AI, changes in internship.
+	Critique current perspectives. No true genius of 100% accuracy. Debug in those slides, if you find some mistakes. Notably, maybe not completely wrong, but *not quite suitable for current situations with lots of changes happened*. e.g. AI, changes in internship. A paradigm: classic rules turns incomplete with changes in a long time.
 	Start with disagreement.
 Part 3. Proposing Alternative Perspectives
 	Build *improved frameworks*. No need to create a new framework.

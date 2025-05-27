@@ -25,5 +25,7 @@
 [[yoj_1290_uncertainlogicevaluation]]
 [[yoj_1333_容斥原理位掩码搜索复健]]
 
+
 [[Gemimi_YOJ_1369_PythonEfficiency]]
 [[Gemini_YOJ_1366_NumpyFails]]
+[[Gemini YOJ 1385 ChineseRemainder]]

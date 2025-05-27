@@ -24,6 +24,11 @@ AIPython 15 Midterm test
 [[AIPython 22IntroductionToPytorch]]
 [[AIPython 23PytorchApplication]]
 
+[[AIPython 25NeuralNetwork]]
+[[AIPython 26ImagesAndConvolution]]
+[[AIPython 27ConfigConvAndTrain]]
+
+
 [[Gemini AutoGrad]]
 [[Gemini VectorsInAI]]
 [[Gemini PythonVariableConfusion]]
@@ -50,7 +55,7 @@ AIPython 15 Midterm test
 [[Assignment3_report]]
 [[Assignment4 report]]
 [[Assignment5_report]]
-
+[[Gemini AIPythonProject4Analysis]]
 
 [[Metaso_jieba application]]
 [[Metaso_PythonCSVapplication]]
