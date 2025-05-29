@@ -1,20 +1,32 @@
+---
+sr-due: 2025-05-30
+sr-interval: 1
+sr-ease: 230
+---
+
 #review 
 
 > [!summary] Review
 > Linear Layers: Input space and output space(column space)
-> Activate Function: `sigmoid`.
+> Activate Function: `sigmoid`. ReLU can also be used !
 > 	Two-layer
 > 	$\mathbf{z}=f(\mathbf{x}\cdot \mathbf{W_{1}}+\mathbf{b_{1}})$
 > 	$\hat{y}=f(\mathbf{z}\cdot \mathbf{W_{2}}+\mathbf{b_{2}})$
 > Parameter sum of a one-layer completely-connected network: $n\times(m+1)$
 
-> [!summary] 
+
 > How images are saved?
-> Pixels are so numerous.--process
+> 	using channels and grayscale!
+> Pixels are so numerous.--
+> 	process, using convolution to substract their characteristics and meanwhile reduce their sizes
 > process: convolution
+> 	Using `Conv2d` and other functions to process the matrice describing the pixels of images.
 > convolution: recognize characteristics
 > conv-neural network: train for the best kernel arguments
+> 	kernel is the key to convolution *instance*, along with `stride`, `padding`, `value` 
 > channels: related for colorful images
+> 	What will different numbers of channels lead to ?
+> 	In later data for training, $1\times 28 \times 28$ tensor/image repr those ==black-white== photos
 
 ### Images
 
@@ -84,7 +96,7 @@ $$\text{output}=\frac{\text{input}-\text{mean}}{\text{std}}$$
 > PIL.image ----
 > `torchvision.transform` ---- `tensor`
 
-Process large image urgently needs *convolution calculation*. Because overlapped layers will cause great memory consumption.
+Process large image urgently needs *convolution calculation*. Because overlapped layers will cause <font color="#ffff00">great memory consumption</font>.
 
 #### concrete steps
 
@@ -257,7 +269,9 @@ convh.show()
 假设输入形状 `(N, C_in, H_in, W_in)`，卷积核形状 `(C_out, C_in/groups, kH, kW)`，`stride=(sH, sW)`，`padding=(pH, pW)`，`dilation=(dH, dW)`。  
 输出形状 `(N, C_out, H_out, W_out)`，其中：
 
-$$Hout=⌊Hin+2×pH−dH×(kH−1)−1sH⌋+1Hout​=⌊sH​Hin​+2×pH​−dH​×(kH​−1)−1​⌋+1$$
+$$H_{out}\begin{align*} =
+ ⌊H_{in}+2×pH−dH×(kH−1)−1sH⌋+1H_{out}​  \\
+=⌊sH​Hin​+2×pH​−dH​×(kH​−1)−1​⌋+1\end{align*}$$
 
 $$Wout=⌊Win+2×pW−dW×(kW−1)−1sW⌋+1Wout​=⌊sW​Win​+2×pW​−dW​×(kW​−1)−1​⌋+1$$
 

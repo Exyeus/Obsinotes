@@ -22,6 +22,7 @@
 	[[ChatWithMetaso]]
 	[[ChatWithGemini]]
 	[[ReferenceCompletion]]
+[[OB 14 AIForLeadership]]
 
 [[OB HW 2 Personality Analysis of Movie Character]]
 [[OB Midterm_PPT_content]]

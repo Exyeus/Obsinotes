@@ -1,3 +1,9 @@
+---
+sr-due: 2025-05-29
+sr-interval: 1
+sr-ease: 228
+---
+
 #review 
 
 好的同学！格林公式 (Green's Theorem) 是多元微积分中一个极其重要的定理，它在二维平面上建立了一个**闭合曲线上的线积分**（第二类曲线积分）与该曲线所围**区域上的二重积分**之间的深刻联系。它是向量微积分基本定理（包括斯托克斯定理和散度定理）在二维平面上的体现，理解它有助于我们把握积分与微分之间的对偶关系。
@@ -101,7 +107,7 @@ $$ \oint_C \mathbf{F} \cdot d\mathbf{r} = \iint_D (\nabla \times \mathbf{F}) \cd
     对内部关于 $y$ 的积分，使用微积分基本定理 (FTC)：
     $$ \int_{g_1(x)}^{g_2(x)} \frac{\partial P}{\partial y} dy = P(x, y) \Big|_{y=g_1(x)}^{y=g_2(x)} = P(x, g_2(x)) - P(x, g_1(x)) $$
     所以，
-    $$ -\iint_D \frac{\partial P}{\partial y} dA = -\int_a^b [P(x, g_2(x)) - P(x, g_1(x))] dx = \int_a^b [P(x, g_1(x)) - P(x, g_2(x))] dx \quad (*)$$
+    $$ -\iint_D \frac{\partial P}{\partial y} dA = -\int_a^b [P(x, g_2(x)) - P(x, g_1(x))] dx $$$$= \int_a^b [P(x, g_1(x)) - P(x, g_2(x))] dx \quad (*)$$
 
 *   **计算线积分 $\oint_C P dx$:**
     边界 $C$ 由四部分组成（可能其中两部分退化）：
@@ -109,16 +115,17 @@ $$ \oint_C \mathbf{F} \cdot d\mathbf{r} = \iint_D (\nabla \times \mathbf{F}) \cd
         $\int_{C_1} P dx = \int_a^b P(t, g_1(t)) dt$。
     *   $C_2$: 顶部曲线 $y=g_2(x)$，从 $x=b$ 到 $x=a$ (方向向左，维持区域在左侧)。参数化：$x=t, y=g_2(t)$, $t$ 从 $b$ 到 $a$。$dx = dt$。
         $\int_{C_2} P dx = \int_b^a P(t, g_2(t)) dt = -\int_a^b P(t, g_2(t)) dt$。
-    *   $C_3, C_4$: (可能存在的) 左右垂直边界。在这些边界上，$x$ 是常数，所以 $dx = 0$。因此 $\int_{C_3} P dx = 0$ 和 $\int_{C_4} P dx = 0$。
-    将各部分相加：
+
+> [!NOTE]
+> $C_3, C_4$: (可能存在的) 左右垂直边界。在这些边界上，$x$ 是常数，所以 $dx = 0$。因此 $\int_{C_3} P dx = 0$ 和 $\int_{C_4} P dx = 0$。
+
+将各部分相加：
     $$ \oint_C P dx = \int_{C_1} P dx + \int_{C_2} P dx + \int_{C_3} P dx + \int_{C_4} P dx $$
     $$ \oint_C P dx = \int_a^b P(t, g_1(t)) dt - \int_a^b P(t, g_2(t)) dt $$$$= \int_a^b [P(t, g_1(t)) - P(t, g_2(t))] dt \quad (**)$$
 
 *   **比较结果:** 比较 $(*)$ 和 $(**)$，我们发现它们是相等的！所以 $\oint_C P dx = -\iint_D \frac{\partial P}{\partial y} dA$ 得证。
 
-类似地，假设 $D$ 是 Type II 区域 ($c \le y \le d, h_1(y) \le x \le h_2(y)$)，可以证明 $\oint_C Q dy = \iint_D \frac{\partial Q}{\partial x} dA$。
-
-对于更复杂的区域，可以将其分解为若干个 Type I 或 Type II 的简单区域。在分解线的积分会相互抵消，最终只剩下最外围边界的积分等于所有小区域二重积分之和。
+类似地，假设 $D$ 是 Type II 区域 ($$c \le y \le d, h_1(y) \le x \le h_2(y)$$)，可以证明 $$\oint_C Q dy = \iint_D \frac{\partial Q}{\partial x} dA$$对于更复杂的区域，可以将其分解为若干个 Type I 或 Type II 的简单区域。在分解线的积分会相互抵消，最终只剩下最外围边界的积分等于所有小区域二重积分之和。
 
 ### 6. 示例与应用 (Examples & Application)
 
@@ -129,13 +136,14 @@ $$ \oint_C \mathbf{F} \cdot d\mathbf{r} = \iint_D (\nabla \times \mathbf{F}) \cd
     参数化 $C: x=\cos t, y=\sin t$, $0 \le t \le 2\pi$。
     $dx = -\sin t dt, dy = \cos t dt$。
     $P=-y=-\sin t, Q=x=\cos t$。
-    $$\oint_C -y dx + x dy = \int_0^{2\pi} [(-\sin t)(-\sin t) + (\cos t)(\cos t)] dt $$$$= \int_0^{2\pi} (\sin^2 t + \cos^2 t) dt = \int_0^{2\pi} 1 dt = 2\pi$$
+    $$\oint_C -y dx + x dy $$$$= \int_0^{2\pi} [(-\sin t)(-\sin t) + (\cos t)(\cos t)] dt $$$$= \int_0^{2\pi} (\sin^2 t + \cos^2 t) dt = \int_0^{2\pi} 1 dt = 2\pi$$
 
 *   **方法二：使用格林公式**
     $P = -y \implies \frac{\partial P}{\partial y} = -1$。
     $Q = x \implies \frac{\partial Q}{\partial x} = 1$。
     区域 $D$ 是单位圆盘 $x^2+y^2 \le 1$。
-    $\oint_C -y dx + x dy = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA = \iint_D (1 - (-1)) dA = \iint_D 2 dA$
+    $\oint_C -y dx + x dy = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA$
+    $= \iint_D (1 - (-1)) dA = \iint_D 2 dA$
     $= 2 \iint_D dA = 2 \times (\text{Area of D}) = 2 \times (\pi \cdot 1^2) = 2\pi$。
     **结果一致！** 在这个例子中，两种方法都可行，但二重积分可能更直接。
 
@@ -147,11 +155,12 @@ $$ \oint_C \mathbf{F} \cdot d\mathbf{r} = \iint_D (\nabla \times \mathbf{F}) \cd
     $P = x^2y + \sin x \implies \frac{\partial P}{\partial y} = x^2$。
     $Q = x^3 + \cos y \implies \frac{\partial Q}{\partial x} = 3x^2$。
     区域 $D$ 是正方形 $[-1, 1] \times [-1, 1]$。
-    $$\begin{align*} \oint_C P dx + Q dy &= \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA \\ &= \iint_D (3x^2 - x^2) dA = \iint_D 2x^2 dA \\ &= \int_{-1}^1 \int_{-1}^1 2x^2 dy dx \\ &= \int_{-1}^1 [2x^2 y]_{y=-1}^{y=1} dx \\ &= \int_{-1}^1 2x^2 (1 - (-1)) dx = \int_{-1}^1 4x^2 dx \\ &= \left[ \frac{4}{3} x^3 \right]_{-1}^1 = \frac{4}{3}(1)^3 - \frac{4}{3}(-1)^3 = \frac{4}{3} - (-\frac{4}{3}) = \frac{8}{3} \end{align*}$$
+    $$\begin{align*} \oint_C P dx + Q dy &= \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA \\ &= \iint_D (3x^2 - x^2) dA = \iint_D 2x^2 dA \\ &= \int_{-1}^1 \int_{-1}^1 2x^2 dy dx \\ &= \int_{-1}^1 [2x^2 y]_{y=-1}^{y=1} dx \\ &= \int_{-1}^1 2x^2 (1 - (-1)) dx = \int_{-1}^1 4x^2 dx \\ &= \left[ \frac{4}{3} x^3 \right]_{-1}^1 \\ &= \frac{4}{3}(1)^3 - \frac{4}{3}(-1)^3 \\ &= \frac{4}{3} - (-\frac{4}{3}) \\ &= \frac{8}{3} \end{align*}$$
     计算过程大大简化！
 
+
 **应用 1: 计算面积**
-如果选取 $P, Q$ 使得 $\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} = 1$，那么格林公式变为：
+如果选取 $P, Q$ 使得 $$\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} = 1$$，那么格林公式变为：
 $$ \text{Area}(D) = \iint_D 1 dA = \oint_C P dx + Q dy $$
 常用的选择有：
 1.  $P=0, Q=x \implies \text{Area}(D) = \oint_C x dy$
@@ -160,14 +169,14 @@ $$ \text{Area}(D) = \iint_D 1 dA = \oint_C P dx + Q dy $$
 
 **例：计算椭圆 $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$ 的面积。**
 使用第 3 种面积公式。参数化椭圆 $C: x=a \cos t, y=b \sin t$, $0 \le t \le 2\pi$。
-$dx = -a \sin t dt, dy = b \cos t dt$。
+$dx = -a \sin t dt, dy = b \cos t dt$。==此处的构建面积对应格林公式即为上面第三种选择！==
 $$\begin{align*} \text{Area} &= \frac{1}{2} \oint_C -y dx + x dy \\ &= \frac{1}{2} \int_0^{2\pi} [(-b \sin t)(-a \sin t) + (a \cos t)(b \cos t)] dt \\ &= \frac{1}{2} \int_0^{2\pi} (ab \sin^2 t + ab \cos^2 t) dt \\ &= \frac{1}{2} \int_0^{2\pi} ab (\sin^2 t + \cos^2 t) dt \\ &= \frac{1}{2} \int_0^{2\pi} ab dt = \frac{1}{2} [abt]_0^{2\pi} = \frac{1}{2} (ab \cdot 2\pi) = \pi ab \end{align*}$$
 这正是我们熟知的椭圆面积公式！
 
 **应用 2: 判断向量场是否保守 / 路径无关**
 一个向量场 $\mathbf{F} = \langle P, Q \rangle$ 在一个**单连通区域 (Simply Connected Region)** $D$（没有“洞”的区域）上是保守的（其线积分与路径无关，仅取决于起点和终点）**当且仅当** $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$ 在 $D$ 内处处成立。
 *   **必要性:** 如果 $\mathbf{F}$ 保守，则对于 $D$ 内任何简单闭合曲线 $C$，都有 $\oint_C P dx + Q dy = 0$。根据格林公式，$\iint_D (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) dA = 0$。由于这必须对 $D$ 内任意小的区域都成立，因此被积函数必须处处为零，即 $\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} = 0$，或 $\frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}$。
-*   **充分性:** 如果 $\frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}$ 在单连通区域 $D$ 上成立，那么对于 $D$ 内任何简单闭合曲线 $C$，根据格林公式 $\oint_C P dx + Q dy = \iint_D (0) dA = 0$。这表明 $\mathbf{F}$ 沿任何闭合路径的线积分为零，这是保守场的一个等价条件。
+*   **充分性:** 如果 $\frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}$ 在单连通区域 $D$ 上成立，那么对于 $D$ 内任何简单闭合曲线 $C$，根据格林公式 $$\oint_C P dx + Q dy = \iint_D (0) dA = 0$$。这表明 $\mathbf{F}$ 沿任何闭合路径的线积分为零，这是保守场的一个等价条件。
 
 ### 7. 知识点总结与要点提炼 (Summary & Key Takeaways)
 

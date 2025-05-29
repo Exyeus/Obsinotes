@@ -28,6 +28,8 @@ AIPython 15 Midterm test
 [[AIPython 25NeuralNetwork]]
 [[AIPython 26ImagesAndConvolution]]
 [[AIPython 27ConfigConvAndTrain]]
+[[AIPython 28]]
+[[Gemini AIPython 28]]
 
 
 [[Gemini AutoGrad]]

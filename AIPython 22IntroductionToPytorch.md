@@ -1,3 +1,9 @@
+---
+sr-due: 2025-06-01
+sr-interval: 3
+sr-ease: 250
+---
+
 #review 
 
 >Function: Similar to numpy
@@ -180,9 +186,6 @@ b = torch.from_numpy(a) # b 是一个 PyTorch Tensor
     - **GPU 加速：**
         - `torch.cuda.is_available()`: 检查当前环境是否有可用的 CUDA 支持的 GPU。 [53, 54]
         - `.cuda()`: 将 Tensor 移动到 GPU 内存。
-            
-            
-            
 ```Python
 if torch.cuda.is_available():
     x_cpu = torch.randn(3, 3)

@@ -1,3 +1,9 @@
+---
+sr-due: 2025-06-01
+sr-interval: 3
+sr-ease: 250
+---
+
 #review 
 
 >Learn from example.
@@ -115,8 +121,7 @@ PPT 列出了常用的绘图函数：`scatter` (散点图), `plot` (折线图), 
             $\mathbf{w}_{new} = \mathbf{w}_{old} - \alpha \nabla_{\mathbf{w}} L$
     *   **梯度的计算 (PPT 公式解读):**
         *   **一元：**
-            $$\frac{\partial L}{\partial w} = \frac{2}{N} \sum_{i=1}^N (w x_i + b - y_i) x_i$$
-            $$\frac{\partial L}{\partial b} = \frac{2}{N} \sum_{i=1}^N (w x_i + b - y_i) \cdot 1$$
+            $$\frac{\partial L}{\partial w} = \frac{2}{N} \sum_{i=1}^N (w x_i + b - y_i) x_i$$$$\frac{\partial L}{\partial b} = \frac{2}{N} \sum_{i=1}^N (w x_i + b - y_i) \cdot 1$$
             *   **推导思路 (以 $\frac{\partial L}{\partial w}$ 为例):** 使用链式法则。$L = \frac{1}{N} \sum e_i^2$，其中 $e_i = (w x_i + b - y_i)$。
             $$\frac{\partial L}{\partial w} = \frac{1}{N} \sum \frac{\partial (e_i^2)}{\partial w} = \frac{1}{N} \sum 2 e_i \frac{\partial e_i}{\partial w}$$.
             由于 $$\frac{\partial e_i}{\partial w} = \frac{\partial (w x_i + b - y_i)}{\partial w} = x_i$$，代入即可得到结果。$\frac{\partial L}{\partial b}$ 同理，只是 $\frac{\partial e_i}{\partial b} = 1$。

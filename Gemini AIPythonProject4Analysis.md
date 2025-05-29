@@ -317,7 +317,7 @@ class Model():
             test_loss, correct, len(test_loader.dataset),
             100. * correct / len(test_loader.dataset)))
 ```
-
+[[Gemini AIPython进一步解释data与全连接层机制]]
 *   **`__init__`方法**：
     *   `self.lr = 0.01`：设置学习率 `learning_rate`。它决定了每次参数更新的步长。学习率过大可能导致模型在最优解附近震荡无法收敛；过小则训练速度慢，容易陷入局部最优。
     *   `self.epoches = 20`：设置训练轮次 `epochs`。一个epoch表示模型遍历了整个训练数据集一次。

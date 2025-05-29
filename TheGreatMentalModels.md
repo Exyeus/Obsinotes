@@ -1,3 +1,9 @@
+---
+sr-due: 2025-05-31
+sr-interval: 3
+sr-ease: 250
+---
+
 #review 
 
 Map is not equivalent to the *real field*. Maps, to some extent, represent models that try to simplify, emulate and predict this world.

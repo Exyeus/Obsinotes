@@ -1,4 +1,24 @@
+---
+sr-due: 2025-05-30
+sr-interval: 1
+sr-ease: 230
+---
+
 #review 
+
+### Summary
+
+Numpy: broadcast, reduction, `ndarray`
+Pytorch:
+	basic data type: `tensor`
+	`nn` : neural network
+	The toolkit contain building blocks: Linear, Conv2d, Conv3d, Pooling *series*.
+	`nn.Module` : the origin where different models *derive*.
+	`Autograd`
+	Optimizer
+	Lossfunction
+	batch_size
+	epoch
 
 [[Pasted image 20250512152548.png]]
 
@@ -82,10 +102,10 @@ NumPy 是 Python 中进行科学计算的基石，特别是处理大规模同质
     *   **特征提取:** 将原始数据（文本、图像等）转换成机器学习算法可以处理的固定长度数值向量。
 *   **模型训练:** 选择合适的模型架构和损失函数，使用训练集数据，通过优化算法（如梯度下降）最小化损失函数，学习模型的参数。
 *   **模型测试与评估:** 使用测试集数据，计算模型的预测结果，并与真实标签对比，使用合适的**性能评价指标**来量化模型的表现。
-*   **二分类评价指标:** 除了简单的**正确率 (Accuracy)** $\frac{TP+TN}{TP+FN+FP+TN}$ （在正负样本不平衡时可能失效），我们还学习了基于**混淆矩阵**（TP, FP, FN, TN）的更健壮指标：
-    *   **精确率 (Precision):** $\frac{TP}{TP+FP}$ （预测为正例的样本中有多少是真正例）
-    *   **召回率 (Recall):** $\frac{TP}{TP+FN}$ （所有真正例中有多少被模型找了出来）
-    *   **F1 值 (F1-score):** $\frac{2 \times Precision \times Recall}{Precision + Recall}$ （Precision 和 Recall 的调和平均数，综合衡量两者的性能）
+*   **二分类评价指标:** 除了简单的**正确率 (Accuracy)** $$\frac{TP+TN}{TP+FN+FP+TN}$$ （在正负样本不平衡时可能失效），我们还学习了基于**混淆矩阵**（TP, FP, FN, TN）的更健壮指标：
+    *   **精确率 (Precision):** $$\frac{TP}{TP+FP}$$ （预测为正例的样本中有多少是真正例）
+    *   **召回率 (Recall):** $$\frac{TP}{TP+FN}$$ （所有真正例中有多少被模型找了出来）
+    *   **F1 值 (F1-score):** $$\frac{2 \times Precision \times Recall}{Precision + Recall}$$ （Precision 和 Recall 的调和平均数，综合衡量两者的性能）
 
 #### 3.6 人工智能导论
 
@@ -114,7 +134,7 @@ NumPy 是 Python 中进行科学计算的基石，特别是处理大规模同质
 
 这就是 PyTorch 等深度学习框架的强大之处。它们的核心能力之一就是**自动微分 (Automatic Differentiation)**，也就是我们上周初步接触的 AutoGrad。<font color="#ffff00">有了自动微分，我们只需要定义模型的前向计算过程（数据如何从输入流向输出，如何计算损失），框架就能自动帮我们计算出所有参数的梯度。这解放了我们，让我们能将精力放在设计更好的模型架构和训练策略上，而不是陷在繁琐的数学推导和易错的代码实现中</font>。
 
-此外，复杂的模型往往是由一些**标准的组件**（比如一层线性变换、一层卷积、一个激活函数）组合而成。如果每次都要从零开始构建这些组件，效率会非常低下。PyTorch 提供了 `torch.nn` 这个工具箱，它就像一个包含了各种预制、高度优化的神经网络“乐高积木”，我们可以非常方便地构建复杂的模型结构。
+此外，复杂的模型往往是由一些**标准的组件**（比如一层线性变换、一层卷积、一个激活函数）组合而成。如果每次都要从零开始构建这些组件，效率会非常低下。PyTorch 提供了 `torch.nn` <font color="#ffff00">这个工具箱，它就像一个包含了各种预制、高度优化的神经网络“乐高积木”，我们可以非常方便地构建复杂的模型结构</font>。
 
 所以，本周的目标就是学习如何利用 PyTorch 的 `Tensor`、`AutoGrad` 以及 `nn` 工具箱，以一种更高效、更模块化的方式实现机器学习模型的训练和测试。我们将从最简单的线性回归开始，但学到的方法将直接应用于更复杂的深度学习模型。
 
@@ -123,7 +143,7 @@ NumPy 是 Python 中进行科学计算的基石，特别是处理大规模同质
 在深入 `nn` 工具箱之前，我们必须牢固掌握 PyTorch 的两个核心概念：
 
 1.  **Tensor:**
-    *   它是 PyTorch 中所有数据表示的基础。
+    *   它是 PyTorch 中<font color="#ffff00">所有数据表示的基础</font>。
     *   它是一个多维数组，类似于 NumPy 的 `ndarray`，但能够在 GPU 上加速运算。
     *   可以通过 `torch.tensor()`, `torch.randn()`, `torch.zeros()` 等方式创建。
     *   具有 `.dtype` (数据类型), `.shape` (形状), `.device` (所在设备，CPU 或 CUDA) 等属性。
@@ -135,20 +155,20 @@ NumPy 是 Python 中进行科学计算的基石，特别是处理大规模同质
     *   在对 `requires_grad=True` 的 Tensor 进行运算时，AutoGrad 会记录这些运算并构建一个**动态计算图 (Dynamic Computation Graph)**。图中的节点是 Tensor，边是运算。
     *   对于一个通过一系列运算得到的**标量 (scalar)** Tensor（比如最终的损失值），调用 `.backward()` 方法会触发反向传播过程。AutoGrad 会沿着计算图从这个标量 Tensor 向前追溯到所有 `requires_grad=True` 的叶子节点 Tensor，并使用链式法则计算这个标量 Tensor 对这些叶子节点 Tensor 的梯度。
     *   计算出的梯度会累积到对应 Tensor 的 `.grad` 属性中。**注意：梯度是累积的！** 如果不手动清零，每次调用 `.backward()` 都会将新的梯度加到 `.grad` 中。因此，在每次训练迭代计算新梯度之前，必须用 `.zero_grad()` 方法（通常是优化器的或者模型自身的）将所有参数的梯度清零。
-    *   对于非标量 Tensor，调用 `.backward()` 需要传入一个与 Tensor 形状相同的梯度张量（称为 `gradient` 参数），表示上游传来的梯度。这在某些高级场景有用，但对于常见的“计算损失对参数的梯度”任务，损失是标量，直接调用 `.backward()` 即可。
+    *   对于非标量 Tensor，调用 `.backward()` 需要传入一个与 Tensor 形状相同的梯度张量（称为 `gradient` 参数），表示上游传来的梯度。这在某些高级场景有用，但对于常见的“**计算损失对参数的梯度**”任务，**损失是标量，直接调用 `.backward()` 即可**。
 
 理解 `Tensor` 的属性（特别是 `requires_grad`）和 `AutoGrad` 的 `.backward()` 工作原理（计算标量对叶子节点的梯度，梯度累积需要清零）是使用 PyTorch 进行模型训练的基础。
 
 #### 4.3 直观解释与感性认识：PyTorch 的“零件盒”与“自动化工厂”
 
-*   **`nn` 工具箱 (零件盒):** 想象你在组装一台复杂的机器。你可以从零开始制作每一个螺丝、每一个齿轮，但这非常耗时。或者，你可以去一个零件商店，里面有各种标准化的、高质量的零件（齿轮组、轴承、电机等）。`torch.nn` 就是这个零件商店。它提供了构建神经网络所需的各种标准“层”(`Linear`, `Conv2d`, `ReLU` 等)，以及一些方便的容器（如 `Sequential`）可以将这些层像乐高一样堆叠起来。这些层都预先设计好，知道如何处理输入数据，并且最重要的是，它们知道如何与 AutoGrad 协同工作，自动处理前向计算和反向传播所需的信息。
+*   **`nn` 工具箱 (零件盒):** 想象你在组装一台复杂的机器。你可以从零开始制作每一个螺丝、每一个齿轮，但这非常耗时。或者，你可以去一个零件商店，里面有各种标准化的、高质量的零件（齿轮组、轴承、电机等）。`torch.nn` 就是这个零件商店。它<font color="#ffff00">提供了构建神经网络所需的各种标准“层”</font>(`Linear`, `Conv2d`, `ReLU` 等)，以及一些方便的容器（如 `Sequential`）可以将这些层像乐高一样堆叠起来。这些层都预先设计好，知道如何处理输入数据，并且最重要的是，它们<font color="#ffff00">知道如何与 AutoGrad 协同工作，自动处理前向计算和反向传播所需的信息</font>。
 *   **`nn.Module` (组装好的子组件/整机):** `nn.Module` 是 `nn` 工具箱的核心概念，它是所有零件（层）和组装好的子组件（甚至是整个模型）的基类。你可以把它想象成一个蓝图或者一个已经组装好的、带有输入接口和输出接口的盒子。每个 `nn.Module` 都知道它有哪些可调节的内部旋钮（**参数**，比如线性层中的权重和偏置），并且知道数据从输入接口进来后，如何在内部流动、经过哪些计算步骤最终从输出接口出去（这个计算步骤由 `forward()` 方法定义）。当你在 PyTorch 中定义一个模型时，你通常会创建一个继承自 `nn.Module` 的类，并在其中定义模型的结构和前向计算逻辑。
 >一个基类。在神经网络之中的所有类，都是 `nn.Module` 的子类。
 
 *   **`Parameter` (内部旋钮):** 在 `nn.Module` 内部，那些需要通过训练来学习、需要被优化的数值（比如权重矩阵 $\mathbf{W}$ 和偏置向量 $\mathbf{b}$）被特别标记为 `Parameter`。`Parameter` 实际上是 `Tensor` 的一个特殊子类，但它会被 `nn.Module` 自动识别并加入到 `model.parameters()` 的列表中，而且默认 `requires_grad=True`。这就是 AutoGrad 如何知道哪些 Tensor 是需要计算梯度的模型参数。
 >一个子类
 
-*   **`Optimizer` (自动化调旋钮工人):** 有了零件、组装好的机器和内部旋钮，我们还需要一个工人来根据机器的运行情况（损失大小）自动化地调节这些旋钮，以提升机器的性能（降低损失）。`torch.optim` 工具箱提供了各种优化算法（如 SGD, Adam 等）。你创建一个 `Optimizer` 实例，告诉它要优化哪些参数（就是 `model.parameters()` 返回的那些），以及使用的学习率等超参数。在训练过程中，`Optimizer` 会接收 AutoGrad 计算好的梯度，并按照选定的优化算法（如 $\mathbf{w} \leftarrow \mathbf{w} - \alpha \nabla_\mathbf{w} L$）来更新模型的参数。
+*   **`Optimizer` (自动化调旋钮工人):** 有了零件、组装好的机器和内部旋钮，我们还需要一个工人来根据机器的运行情况（损失大小）自动化地调节这些旋钮，以提升机器的性能（降低损失）。`torch.optim` 工具箱提供了各种优化算法（如 SGD, Adam 等）。你创建一个 `Optimizer` 实例，告诉它要优化哪些参数（就是 `model.parameters()` 返回的那些），以及使用的学习率等超参数。在训练过程中，`Optimizer` 会接收 AutoGrad 计算好的梯度，并按照选定的优化算法（如 $$\mathbf{w} \leftarrow \mathbf{w} - \alpha \nabla_\mathbf{w} L$$）来更新模型的参数。
 
 总结来说，你可以用 `nn.Module` 来定义你的模型结构，模型内部的可训练数值用 `Parameter` 表示。`nn` 工具箱提供了很多现成的 `nn.Module` 子类作为基础构建块。当你给模型输入数据并计算出损失后，`AutoGrad` 会自动计算损失对所有 `Parameter` 的梯度。最后，`Optimizer` 会利用这些梯度来更新 `Parameter` 的值。整个过程就像一个高效的自动化工厂。
 
